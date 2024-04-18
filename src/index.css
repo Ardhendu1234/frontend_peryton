@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.shadow{
+    box-shadow: 0px 0px 10000px 60px rgba(232,51,232,1);
+}
+
+.gradient-blue{
+    background: rgb(28, 90, 232);
+background: radial-gradient(radial, rgb(4, 82, 154) 0%, rgba(235, 14, 40, 0) 100%);
+}
+.gradient-green{
+    background: rgb(19, 229, 92);
+background: radial-gradient(radial, rgb(5, 204, 88) 0%, rgba(235, 14, 40, 0) 100%);
+}
