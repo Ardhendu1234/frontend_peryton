@@ -130,7 +130,7 @@ export default function Header() {
                       <div className="flex-auto">
                         <Link
                           to={"/products/" + item.id}
-                          className="block font-semibold text-gray-50"
+                          className="block font-semibold text-gray-50 group-hover:text-black"
                         >
                           {item.name}
                           <span className="absolute inset-0" />

@@ -120,11 +120,11 @@ const Home = () => {
       <div className="w-[100vw] h-screen relative top-0 max-w-s bg-black z-[-2]">
         <div
         style={{
-          backgroundImage: 'url("/imgs/drone4.jpg")',
+          backgroundImage: 'url("/imgs/drone4.png")',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',          
         }}
-          className="w-full h-full flex flex-col justify-center items-center"
+          className="w-full h-full pt-[5vw] flex flex-col justify-center items-center"
           alt="home"
         >
           <img
