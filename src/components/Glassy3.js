@@ -69,6 +69,7 @@ const Glassy3 = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        transformStyle: 'preserve-3d',
       }}
      
     >
@@ -84,7 +85,9 @@ const Glassy3 = () => {
         onMouseEnter={toggle}
         onMouseLeave={toggle2}
         ref={main}
-        style={{ clipPath: "inset(0)" }}
+        style={{ 
+            clipPath: "inset(0)" 
+        }}
         className={`${
           cursor ? "border-[2px] border-blue-700 " : "border-[0.5px] border-blue-200"
         } h-[100%] pb-[2vw] justify-center items-center text-[2.5vw] w-[100%] cursor-pointer flex flex-col bg-black bg-opacity-10 rounded-2xl px-[4vw] text-white`}
@@ -106,7 +109,10 @@ const Glassy3 = () => {
             <img
               src="imgs/dronePNG.png"
               alt="drone"
-              className="w-[30vw] h-[18vw] mt-[2vw] hover:scale-110 transition-all duration-1000 ease-linear"
+              style={{ 
+                transform: 'translateZ(600px)',
+            }}
+              className="w-[30vw] h-[18vw] mt-[2vw] hover:scale-105 transition-all duration-100 ease-linear"
             />
           </div>
       </div>
