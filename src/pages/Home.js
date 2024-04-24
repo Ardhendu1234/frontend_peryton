@@ -2,18 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaTwitter,
-  FaLinkedin,
-  FaChevronCircleLeft,
-  FaChevronCircleRight,
-  FaBriefcase,
-  FaUser,
-  FaChevronLeft,
-  FaChevronRight,
-} from "react-icons/fa";
+import {FaBriefcase,FaUser} from "react-icons/fa";
 import { blogData, customers, products, services } from "../constants/data";
 import { MdGroups } from "react-icons/md";
 import CountUp from "react-countup";
@@ -23,14 +12,15 @@ import { Link, useNavigate } from "react-router-dom";
 import BlogPost from "../components/blogPost";
 import { Tilt } from "react-tilt";
 import Glassy from "../components/Glassy";
+import Glassy2 from "../components/Glassy2";
+import Glassy3 from "../components/Glassy3";
 
 const Home = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [cursor, setCursor] = useState(false);
-  const [cursor2, setCursor2] = useState(false);
-  const [index, setIndex] = useState(0);
-  const main = useRef(null);
+  
 
+  const main = useRef(null);
   const gradientRef = useRef(null);
 
   const toggle = () => {
@@ -97,7 +87,7 @@ const Home = () => {
   const defaultOptions = {
     reverse: false,
     max: 15,
-    perspective: 1500,
+    perspective: 2500,
     scale: 1,
     speed: 500,
     transition: true,
@@ -225,7 +215,7 @@ const Home = () => {
             >
               <div
                 ref={gradientRef}
-                className={`gradient-green z-[-10] rounded-full h-[100px] blur-[100px] w-[240px] absolute cursor ${
+                className={`gradient-blue z-[-10] rounded-full h-[100px] blur-[100px] w-[240px] absolute cursor ${
                   cursor ? "opacity-100" : "opacity-0"
                 }`}
               />
@@ -234,11 +224,11 @@ const Home = () => {
                 onMouseLeave={toggle2}
                 ref={main}
                 className={`${
-                  cursor ? "border-[2px] border-green-500 " : ""
+                  cursor ? "border-[2px] border-blue-400 " : ""
                 } h-[100%] text-[2.5vw] w-[100%] cursor-pointer bg-black bg-opacity-10 rounded-2xl px-[4vw] text-white flex flex-row py-[7vw] gap-[0vw]`}
               >
                 <div className="flex flex-col w-[25%] justify-center items-center">
-                  <MdGroups className="text-green-500 text-5xl mb-4" />
+                  <MdGroups className="text-blue-500 text-5xl mb-4" />
                   {isVisible && (
                     <div className="text-white text-4xl font-bold">
                       <CountUp end={1} duration={2} />
@@ -248,7 +238,7 @@ const Home = () => {
                   <div className="text-gray-400 text-2xl">Buyers</div>
                 </div>
                 <div className="flex flex-col w-[25%] justify-center items-center">
-                  <FaBriefcase className="text-green-500 text-4xl mb-4" />
+                  <FaBriefcase className="text-blue-500 text-4xl mb-4" />
                   {isVisible && (
                     <div className="text-white text-4xl font-bold">
                       <CountUp end={110} duration={2} />+
@@ -257,7 +247,7 @@ const Home = () => {
                   <div className="text-gray-400 text-2xl">Projects</div>
                 </div>
                 <div className="flex flex-col w-[25%] justify-center items-center">
-                  <TbDrone className="text-green-500 text-5xl mb-4" />
+                  <TbDrone className="text-blue-500 text-5xl mb-4" />
                   {isVisible && (
                     <div className="text-white text-4xl font-bold">
                       <CountUp end={25} duration={2} />+
@@ -266,7 +256,7 @@ const Home = () => {
                   <div className="text-gray-400 text-2xl">Drones</div>
                 </div>
                 <div className="flex flex-col w-[25%] justify-center items-center">
-                  <FaUser className="text-green-500 text-5xl mb-4" />
+                  <FaUser className="text-blue-500 text-5xl mb-4" />
                   {isVisible && (
                     <div className="text-white text-4xl font-bold">
                       <CountUp end={6} duration={2} />
@@ -285,26 +275,10 @@ const Home = () => {
           </button>
         </div>
 
-        <Tilt
-        options={defaultOptions}
-         className={`${cursor2 ? "": ""} bg-gray-900 rounded-2xl flex flex-col justify-center items-center w-[80%] mx-auto py-8 pb-6 my-8`}>
-          <h3 className="text-white text-4xl font-bold">
-            Our Sponsors and Partners
-          </h3>
-          <div className="text-gray-500">
-            Driving technology for leading brands
-          </div>
+        
+        <Glassy2/>
 
-          <div className="flex md:flex-row flex-col gap-24  w-full h-auto p-12 m-12 mb-0 justify-center items-center rounded-md">
-            {customers.map((item) => {
-              return (
-                <img src={item.image} alt={item.name} className="h-24 w-auto" />
-              );
-            })}
-          </div>
-        </Tilt>
-
-        <div className="flex justify-between align-center w-[80%] mx-auto py-8 my-8">
+        {/* <div className="flex justify-between align-center w-[80%] mx-auto py-8 my-8">
           <h3 className="text-white text-4xl font-bold">Blogs</h3>
           <button className="text-white bg-gray-700 px-6 py-3 rounded font-bold uppercase hover:bg-blue-700">
             View All Blogs
@@ -323,14 +297,14 @@ const Home = () => {
               />
             );
           })}
-        </div>
+        </div> */}
 
-        <div className="flex justify-center align-center md:w-[70%] w-[80%] mx-auto py-8 pb-6 my-8">
+        {/* <div className="flex justify-center align-center md:w-[70%] w-[80%] mx-auto py-8 pb-6 my-8">
           <div className="flex md:flex-row flex-col w-full">
             <div className="md:w-1/2 w-full flex flex-col justify-end">
               <div className="w-full md:h-3/4 h-max bg-gray-800 p-10">
                 <h2 className="text-white text-5xl font-bold mb-12">
-                  Let's talk about you project
+                  Let's Connect
                 </h2>
                 <Link
                   to="/contact"
@@ -346,7 +320,12 @@ const Home = () => {
               className="md:w-1/2 w-full h-auto"
             />
           </div>
+        </div> */}
+        
+        <div className="mt-[8vw]">
+        <Glassy3/>
         </div>
+        
       </div>
     </>
   );
