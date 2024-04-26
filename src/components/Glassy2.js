@@ -62,14 +62,12 @@ const Glassy2 = ({ icon, name,subtitle }) => {
       options={defaultOptions}
       style={{
         clipPath: cursor ? "inset(0)" : "none",
-        width: "70vw",
-        height: "27vw",
         borderRadius: "1rem",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
       }}
-     
+     className="h-[33vw] md:h-[28vw] w-[70vw]"
     >
       {/* Gradient clipped by parent using clip-path */}
       <div
@@ -88,7 +86,7 @@ const Glassy2 = ({ icon, name,subtitle }) => {
         } h-[100%] text-[2.5vw] w-[100%] cursor-pointer flex flex-col bg-black bg-opacity-10 rounded-2xl px-[4vw] text-white  ${subtitle ? "gap-[2vw] pt-[4vw]":"gap-[4vw] pt-[5vw]"}`}
       >
          <div className="flex flex-col justify-center items-center">
-         <h3 className="text-white text-4xl font-bold">
+         <h3 className="text-white text-xl md:text-4xl font-bold">
           Our Sponsors and Partners
         </h3>
         <div className="text-gray-500">
@@ -97,10 +95,10 @@ const Glassy2 = ({ icon, name,subtitle }) => {
          </div>
        
 
-        <div className="flex md:flex-row flex-col gap-[4vw] mb-0 justify-center items-center rounded-md">
+        <div className="flex flex-row gap-[6vw] md:gap-[4vw] mb-0 justify-center items-center rounded-md">
           {customers.map((item) => {
             return (
-              <img src={item.image} alt={item.name} className="h-24 w-auto" />
+              <img src={item.image} alt={item.name} className="md:h-20 lg:h-24 h-14 w-auto" />
             );
           })}
         </div>

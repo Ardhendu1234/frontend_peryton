@@ -5,22 +5,21 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div
-      className="w-full  py-[2vw] pl-[5vw]  flex flex-col bg-gray-950 bg-cover bg-center bg-no-repeat"
-      
+      className="w-[100vw] py-[2vw] px-[3vw] flex flex-col bg-gray-950"
     >
-      <div className="w-full flex md:flex-row flex-col md:gap-0 gap-6">
+      <div className=" flex md:flex-row flex-col md:gap-0 gap-6">
         <div className="md:w-[60%] w-full ">
-          <img src="imgs/logo.png" alt="site-logo" className="h-8 mb-12" />
+          <img src="imgs/logo.png" alt="site-logo" className="h-6 md:h-8 mb-8 md:mb-12" />
           <div>
-            <div className="text-white pb-3 font-bold">Join our team</div>
+            <div className="text-white pb-3 text-lg md:text-2xl font-bold">Join our team</div>
             <div className="flex gap-4">
               <input
                 id="email"
                 type="email"
                 placeholder="Email Address"
-                className="w-[240px] min-h-[40px] bg-gray-800 text-white py-4 px-4"
+                className="w-[160px] md:w-[240px] min-h-[40px] bg-gray-800 text-white py-4 px-4"
               />
-              <button className="w-[100px] min-h-[40px] bg-blue-700 text-white py-4 font-bold hover:bg-gray-700 hover: hover:text-blue-700">
+              <button className="w-[80px] md:w-[100px] min-h-[40px] bg-blue-700 text-white py-4 font-bold hover:bg-gray-700 hover: hover:text-blue-700">
                 JOIN
               </button>
             </div>
@@ -28,7 +27,7 @@ const Footer = () => {
         </div>
         
         <div className="md:w-[20%] w-full flex flex-col">
-          <h3 className="text-white font-bold text-lg pb-6">Information</h3>
+          <h3 className="text-white font-bold text-lg pb-4 md:pb-6">Information</h3>
           <Link
             to="/"
             className="text-gray-400 text-sm pb-3 hover:text-blue-700"
@@ -43,8 +42,8 @@ const Footer = () => {
           </Link>
         </div>
 
-        <div className="md:w-[20%] w-full">
-          <h3 className="text-white font-bold text-3xl pb-6">Contact Us</h3>
+        <div className="md:w-[25%] w-full">
+          <h3 className="text-white font-bold text-2xl md:text-3xl pb-6">Contact Us</h3>
           <div className="text-gray-400 text-sm pb-3">
             Phone: (+91) 7507284555
           </div>
@@ -53,22 +52,23 @@ const Footer = () => {
           </div>
 
           <div className="flex gap-4 text-gray-400 mt-8">
-            <div className="w-[40px] h-[40px] bg-gray-800 flex items-center justify-center rounded-full hover:bg-blue-700 hover:text-white">
+            <div className="md:w-[4vw] md:h-[4vw] w-[40px] h-[40px] bg-gray-800 flex items-center justify-center rounded-full hover:bg-blue-700 hover:text-white">
               <FaFacebook />
             </div>
-            <div className="w-[40px] h-[40px] bg-gray-800 flex items-center justify-center rounded-full hover:bg-blue-700 hover:text-white">
+            <div className="md:w-[4vw] md:h-[4vw] w-[40px] h-[40px] bg-gray-800 flex items-center justify-center rounded-full hover:bg-blue-700 hover:text-white">
               <FaTwitter />
             </div>
-            <div className="w-[40px] h-[40px] bg-gray-800 flex items-center justify-center rounded-full hover:bg-blue-700 hover:text-white">
+            <div className="md:w-[4vw] md:h-[4vw] w-[40px] h-[40px] bg-gray-800 flex items-center justify-center rounded-full hover:bg-blue-700 hover:text-white">
               <FaLinkedin />
             </div>
-            <div className="w-[40px] h-[40px] bg-gray-800 flex items-center justify-center rounded-full hover:bg-blue-700 hover:text-white">
+            <div className="md:w-[4vw] md:h-[4vw] w-[40px] h-[40px] bg-gray-800 flex items-center justify-center rounded-full hover:bg-blue-700 hover:text-white">
               <FaInstagram />
             </div>
           </div>
         </div>
 
       </div>
+
       
       <div className="w-full flex md:flex-row md:gap-0 gap-16 flex-col justify-between mt-12 border-t border-gray-800 pt-6">
         <div className="text-gray-400 md:order-1 order-2">
@@ -86,6 +86,7 @@ const Footer = () => {
           </Link>
         </div>
       </div>
+      
     </div>
   );
 };

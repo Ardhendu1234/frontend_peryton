@@ -64,7 +64,7 @@ const Glassy3 = () => {
       style={{
         clipPath: cursor ? "inset(0)" : "none",
         width: "70vw",
-        height: "28vw",
+        height: "27vw",
         borderRadius: "1rem",
         display: "flex",
         justifyContent: "center",
@@ -89,18 +89,18 @@ const Glassy3 = () => {
             clipPath: "inset(0)" 
         }}
         className={`${
-          cursor ? "border-[2px] border-blue-700 " : "border-[0.5px] border-blue-200"
+          cursor ? "border-[2px] border-blue-700 " : "border-[1px] border-blue-200"
         } h-[100%] pb-[2vw] justify-center items-center text-[2.5vw] w-[100%] cursor-pointer flex flex-col bg-black bg-opacity-10 rounded-2xl px-[4vw] text-white`}
       >
-        <div className="flex md:flex-row flex-col w-full">
+        <div className="flex flex-row  w-full">
             <div className="md:w-1/2 w-full flex flex-col ">
-              <div className="w-full bg-transparent mt-[2vw]">
-                <h2 className="text-white text-5xl font-bold">
+              <div className="w-full bg-transparent">
+                <h2 className="text-white text-2xl md:text-3xl lg:text-5xl font-bold">
                   Let's Connect
                 </h2>
                 <Link
                   to="/contact"
-                  className="bg-blue-700 py-4 px-16 rounded-[1vw] text-white font-bold text-2xl hover:bg-gray-200 hover:text-blue-700 "
+                  className="bg-blue-700 py-2 lg:py-4 px-10 lg:px-16 rounded-[1vw] text-white font-bold text-lg md:text-2xl hover:bg-gray-200 hover:text-blue-700 "
                 >
                   Contact
                 </Link>

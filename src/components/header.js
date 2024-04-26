@@ -48,7 +48,7 @@ export default function Header() {
   return (
     <header
       className={
-        "w-full " +
+        "w-[100vw] " +
         (location.pathname === "/" ? "fixed" : "") +
         " " +
         (scrollPosition < 40 && location.pathname === "/"

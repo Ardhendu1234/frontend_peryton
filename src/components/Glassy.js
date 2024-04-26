@@ -61,14 +61,12 @@ const Glassy = ({ icon, name,subtitle }) => {
       options={defaultOptions}
       style={{
         clipPath: cursor ? "inset(0)" : "none",
-        width: "28vw",
-        height: "23vw",
         borderRadius: "1rem",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
       }}
-      // className="w-[28vw] h-[23vw] rounded-2xl flex justify-center items-center"
+       className="md:w-[28vw] md:h-[23vw] w-[60vw] h-[32vw] rounded-2xl flex justify-center items-center"
     >
       {/* Gradient clipped by parent using clip-path */}
       <div

@@ -107,7 +107,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="w-[100vw] h-screen relative top-0 max-w-s bg-black z-[-2]">
+      <div className="w-[100vw] h-screen relative top-0 max-w-s  z-[-2]">
         <div
         style={{
           backgroundImage: 'url("/imgs/drone4.png")',
@@ -138,17 +138,17 @@ const Home = () => {
       </div>
 
     
-      <div className="pb-[100px] w-[100vw] bg-black relative pt-8  flex flex-col justify-center items-center">
+      <div className="pb-[100px] w-[100vw] bg-black relative pt-8 flex flex-col justify-center items-center px-4">
 
-        <div className="flex justify-between align-center w-[80%] mx-auto py-8">
-          <h3 className="text-white text-4xl font-bold">Products</h3>
-          <button className="text-white bg-gray-700 px-6 py-3 rounded font-bold uppercase hover:bg-blue-700">
+        <div className="flex justify-between align-center w-full mx-auto py-8 ">
+          <h3 className="text-white text-3xl md:text-4xl font-bold">Products</h3>
+          <button className="text-white bg-gray-700 px-4 py-2 md:px-6 md:py-3 rounded-[2vw] font-bold uppercase hover:bg-blue-700">
             View All Products
           </button>
         </div>
 
         <div
-          className={` w-[70vw] h-[55vw] `}
+          className={` w-[70vw] md:h-[55vw] `}
         >
           <Slider {...settings}>
             {products.map((item,index) => {
@@ -164,13 +164,13 @@ const Home = () => {
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="w-[12vw] h-[12vw] rounded-[50%] shadow-md"
+                        className="w-12 h-12 rounded-[50%] shadow-md"
                       />
-                      <p className="text-white text-lg h-[8vw] mt-[2vw] text-center">
+                      <p className="text-white text-lg  mt-[2vw] text-center">
                         {item.description}
                       </p>
                       <button
-                        className="text-white bg-gray-700 px-6 py-3 rounded font-bold hover:bg-blue-700"
+                        className="text-white bg-gray-700 px-6 py-3 rounded font-bold hover:bg-blue-700 "
                         onClick={() => {
                           navigate("/products/" + item.id);
                         }}
@@ -185,14 +185,15 @@ const Home = () => {
           </Slider>
         </div>
 
-        <div className="flex justify-between align-center w-[80%] mx-auto py-8 my-8">
-          <h3 className="text-white text-4xl font-bold">Services</h3>
-          <button className="text-white bg-gray-700 px-6 py-3 rounded font-bold uppercase hover:bg-blue-700">
+
+        <div className="flex justify-between align-center w-full mx-auto py-8 ">
+          <h3 className="text-white text-3xl md:text-4xl font-bold">Services</h3>
+          <button className="text-white bg-gray-700 px-4 py-2 md:px-6 md:py-3 rounded-[2vw] font-bold uppercase hover:bg-blue-700">
             View All Services
           </button>
         </div>
 
-        <div className="flex md:flex-row flex-col justify-center gap-10 pt-[5vw] rounded-md shadow-md">
+        <div className="flex md:flex-row flex-col justify-center gap-6 md:gap-10 pt-[5vw] rounded-md shadow-md">
           {services.map((item,index) => {
             return <div key={index}><Glassy icon={item.icon} name={item.title} /> </div>;
           })}
@@ -225,44 +226,44 @@ const Home = () => {
                 ref={main}
                 className={`${
                   cursor ? "border-[2px] border-blue-400 " : ""
-                } h-[100%] text-[2.5vw] w-[100%] cursor-pointer bg-black bg-opacity-10 rounded-2xl px-[4vw] text-white flex flex-row py-[7vw] gap-[0vw]`}
+                } h-[100%] text-[2.5vw] w-[100%] cursor-pointer bg-black bg-opacity-10 rounded-2xl text-3xl md:text-4xl px-[4vw] text-white flex flex-row py-[7vw] gap-[0vw]`}
               >
                 <div className="flex flex-col w-[25%] justify-center items-center">
-                  <MdGroups className="text-blue-500 text-5xl mb-4" />
+                  <MdGroups className="text-blue-500 text-3xl md:text-5xl mb-4" />
                   {isVisible && (
-                    <div className="text-white text-4xl font-bold">
+                    <div className="text-white font-bold">
                       <CountUp end={1} duration={2} />
                       K+
                     </div>
                   )}
-                  <div className="text-gray-400 text-2xl">Buyers</div>
+                  <div className="text-gray-400 text-lg md:text-2xl">Buyers</div>
                 </div>
                 <div className="flex flex-col w-[25%] justify-center items-center">
-                  <FaBriefcase className="text-blue-500 text-4xl mb-4" />
+                  <FaBriefcase className="text-blue-500 text-3xl md:text-5xl mb-4" />
                   {isVisible && (
-                    <div className="text-white text-4xl font-bold">
+                    <div className="text-white  font-bold">
                       <CountUp end={110} duration={2} />+
                     </div>
                   )}
-                  <div className="text-gray-400 text-2xl">Projects</div>
+                  <div className="text-gray-400 text-lg md:text-2xl">Projects</div>
                 </div>
                 <div className="flex flex-col w-[25%] justify-center items-center">
-                  <TbDrone className="text-blue-500 text-5xl mb-4" />
+                  <TbDrone className="text-blue-500 text-3xl md:text-5xl mb-4" />
                   {isVisible && (
-                    <div className="text-white text-4xl font-bold">
+                    <div className="text-white  font-bold">
                       <CountUp end={25} duration={2} />+
                     </div>
                   )}
-                  <div className="text-gray-400 text-2xl">Drones</div>
+                  <div className="text-gray-400 text-lg md:text-2xl">Drones</div>
                 </div>
                 <div className="flex flex-col w-[25%] justify-center items-center">
-                  <FaUser className="text-blue-500 text-5xl mb-4" />
+                  <FaUser className="text-blue-500 text-3xl md:text-5xl mb-4" />
                   {isVisible && (
-                    <div className="text-white text-4xl font-bold">
+                    <div className="text-white  font-bold">
                       <CountUp end={6} duration={2} />
                     </div>
                   )}
-                  <div className="text-gray-400 text-2xl">Employees</div>
+                  <div className="text-gray-400 text-lg md:text-2xl">Employees</div>
                 </div>
               </div>
             </Tilt>
@@ -277,50 +278,6 @@ const Home = () => {
 
         
         <Glassy2/>
-
-        {/* <div className="flex justify-between align-center w-[80%] mx-auto py-8 my-8">
-          <h3 className="text-white text-4xl font-bold">Blogs</h3>
-          <button className="text-white bg-gray-700 px-6 py-3 rounded font-bold uppercase hover:bg-blue-700">
-            View All Blogs
-          </button>
-        </div>
-
-        <div className="flex md:flex-row flex-col gap-6 w-[80%] h-auto min-w-[300px] mx-auto overflow-hidden shrink-0 rounded-md shadow-md">
-          {blogData.map((item) => {
-            return (
-              <BlogPost
-                key={item.id}
-                id={item.id}
-                img={item.image}
-                category={item.category}
-                title={item.title}
-              />
-            );
-          })}
-        </div> */}
-
-        {/* <div className="flex justify-center align-center md:w-[70%] w-[80%] mx-auto py-8 pb-6 my-8">
-          <div className="flex md:flex-row flex-col w-full">
-            <div className="md:w-1/2 w-full flex flex-col justify-end">
-              <div className="w-full md:h-3/4 h-max bg-gray-800 p-10">
-                <h2 className="text-white text-5xl font-bold mb-12">
-                  Let's Connect
-                </h2>
-                <Link
-                  to="/contact"
-                  className="bg-blue-700 py-4 px-16 text-white font-bold text-2xl mt-8 hover:bg-gray-700 hover:text-blue-700"
-                >
-                  Contact
-                </Link>
-              </div>
-            </div>
-            <img
-              src="imgs/pexels-oleksandr-pidvalnyi-1093236-1024x681.jpg"
-              alt="drone"
-              className="md:w-1/2 w-full h-auto"
-            />
-          </div>
-        </div> */}
         
         <div className="mt-[8vw]">
         <Glassy3/>
