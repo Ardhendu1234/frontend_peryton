@@ -9,7 +9,6 @@ import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 import { TbDrone } from "react-icons/tb";
 import { Link, useNavigate } from "react-router-dom";
-import BlogPost from "../components/blogPost";
 import { Tilt } from "react-tilt";
 import Glassy from "../components/Glassy";
 import Glassy2 from "../components/Glassy2";
@@ -64,25 +63,8 @@ const Home = () => {
 
   const handleScroll = () => {
     const position = window.scrollY;
-    // console.log(10 + position / 10);
     setScrollPosition(position);
   };
-
-  // const incrementIndex = () => {
-  //   if (index < products.length - 1) {
-  //     setIndex(index + 1);
-  //   } else {
-  //     setIndex(0);
-  //   }
-  // };
-
-  // const decrementIndex = () => {
-  //   if (index > 0) {
-  //     setIndex(index - 1);
-  //   } else {
-  //     setIndex(products.length - 1);
-  //   }
-  // };
 
   const defaultOptions = {
     reverse: false,
@@ -112,7 +94,8 @@ const Home = () => {
         style={{
           backgroundImage: 'url("/imgs/drone4.png")',
           backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',          
+          backgroundSize: 'cover',     
+          backgroundPosition:'center'     
         }}
           className="w-full h-full pt-[5vw] flex flex-col justify-center items-center"
           alt="home"
@@ -127,13 +110,6 @@ const Home = () => {
             alt="site-logo"
             className="md:h-6 h-2 w-auto z-10"
           />
-
-          {/* <div className="flex flex-row overflow-hidden align-middle justify-center text-gray-400 gap-6 mt-12 text-3xl">
-            <FaFacebook />
-            <FaInstagram />
-            <FaTwitter />
-            <FaLinkedin />
-          </div> */}
         </div>
       </div>
 
@@ -276,7 +252,6 @@ const Home = () => {
           </button>
         </div>
 
-        
         <Glassy2/>
         
         <div className="mt-[8vw]">
