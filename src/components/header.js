@@ -142,21 +142,7 @@ export default function Header() {
                     </div>
                   ))}
                 </div>
-                {/* <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                  {callsToAction.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-50 hover:bg-gray-100"
-                    >
-                      <item.icon
-                        className="h-5 w-5 flex-none text-gray-400"
-                        aria-hidden="true"
-                      />
-                      {item.name}
-                    </a>
-                  ))}
-                </div> */}
+                
               </Popover.Panel>
             </Transition>
           </Popover>
@@ -184,7 +170,7 @@ export default function Header() {
             About us
           </Link>
           <Link
-            to="/blog"
+            to="/ecommerce"
             className={
               "text-sm font-semibold leading-6 text-gray-50 pb-2 hover:border-b-2 hover:border-blue-700 " +
               (location.pathname === "/about"
@@ -192,7 +178,7 @@ export default function Header() {
                 : "")
             }
           >
-            Blog
+            Ecommerce
           </Link>
           <Link
             to="/contact"

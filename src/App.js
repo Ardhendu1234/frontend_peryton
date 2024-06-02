@@ -14,7 +14,7 @@ import BlogCategory from "./pages/blogs/BlogCategory";
 import BlogAuthor from "./pages/blogs/BlogAuthor";
 import BlogDate from "./pages/blogs/BlogDate";
 import Demo from "./pages/Demo";
-import Ecommerce from "./pages/ecom";
+ import Ecommerce from "./pages/ecom";
 
 const App = () => {
   return (

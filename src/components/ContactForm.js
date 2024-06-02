@@ -30,10 +30,7 @@ function ContactForm({ item, onClose }) {
           'LsNle7uL7XcsY8ntV'        
         );
         alert('Email sent successfully');
-        onClose();
-      
-
-
+        onClose()
 
     } catch (error) {
       console.error('Error sending email:', error);
