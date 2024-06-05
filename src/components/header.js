@@ -105,7 +105,7 @@ export default function Header() {
 
             <Transition
               as={Fragment}
-              enter="transition ease-out duration-1000"
+              enter="transition ease-out duration-400"
               enterFrom="opacity-0 translate-y-20"
               enterTo="opacity-100 translate-y-0"
               leave="transition ease-in duration-150"
@@ -220,6 +220,7 @@ export default function Header() {
               <XMarkIcon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
+
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">

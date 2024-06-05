@@ -89,7 +89,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="w-[100vw] h-screen relative top-0 max-w-s  z-[-2]">
+      <div className="w-[100vw] h-screen relative top-0 max-w-s z-[-2]">
         <div
         style={{
           backgroundImage: 'url("/imgs/drone4.png")',

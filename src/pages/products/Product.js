@@ -68,13 +68,19 @@ const Product = () => {
 
       {productData ? (
         <>
-          <StyledHeading
+          {/* <StyledHeading
             bg_text={productData.name}
             fg_text={productData.name}
-          />
+          /> */}
+          <div className="relative w-[100%] m-auto flex flex-col items-center justify-center xl:py-16 md:py-12 py-4">
+          <div className="relative z-[5] text-white xl:text-[100px] md:text[60px] text-[40px] font-black ">
+        {productData.name}
+      </div>
+          </div>
+          
 
           <div className="w-[80%] m-auto flex flex-col items-center justify-center">
-            <div className="w-[80%] h-[500px] bg-gray-800 rounded-lg overflow-hidden">
+            <div className="w-[80%] bg-gray-800 rounded-lg overflow-hidden">
               <img
                 src={productData.image}
                 alt={productData.name}
