@@ -116,15 +116,12 @@ const Home = () => {
     
       <div className="pb-[100px] w-[100vw] bg-black relative pt-8 flex flex-col justify-center items-center px-4">
 
-        <div className="flex justify-between align-center w-full mx-auto py-8 ">
+        <div className="flex justify-center align-center w-full mx-auto py-8 ">
           <h3 className="text-white text-3xl md:text-4xl font-bold">Products</h3>
-          <button className="text-white bg-gray-700 px-4 py-2 md:px-6 md:py-3 rounded-[2vw] font-bold uppercase hover:bg-blue-700">
-            View All Products
-          </button>
         </div>
 
         <div
-          className={` w-[70vw] md:h-[55vw] `}
+          className={` w-[70vw] md:h-fit my-[1vw]`}
         >
           <Slider {...settings}>
             {products.map((item,index) => {
@@ -140,19 +137,19 @@ const Home = () => {
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="w-12 h-12 rounded-[50%] shadow-md"
+                        className="w-[15vw] h-[15vw] rounded-[50%] shadow-md"
                       />
                       <p className="text-white text-lg  mt-[2vw] text-center">
                         {item.description}
                       </p>
-                      <button
+                      {/* <button
                         className="text-white bg-gray-700 px-6 py-3 rounded font-bold hover:bg-blue-700 "
                         onClick={() => {
                           navigate("/products/" + item.id);
                         }}
                       >
                         View Product
-                      </button>
+                      </button> */}
                     </div>
                   </div>
        
@@ -161,19 +158,29 @@ const Home = () => {
           </Slider>
         </div>
 
-
-        <div className="flex justify-between align-center w-full mx-auto py-8 ">
-          <h3 className="text-white text-3xl md:text-4xl font-bold">Services</h3>
-          <button className="text-white bg-gray-700 px-4 py-2 md:px-6 md:py-3 rounded-[2vw] font-bold uppercase hover:bg-blue-700">
-            View All Services
+        <a href="/ecommerce" className="flex justify-center align-center w-[80%] mx-auto py-8 pb-6 my-8">
+          <button className="text-white bg-gray-700 px-6 py-3 rounded-[1vw] font-bold uppercase hover:bg-blue-700">
+            View All Projects
           </button>
+        </a>
+
+
+        <div className="flex justify-center align-center w-full mx-auto py-8 ">
+          <h3 className="text-white text-3xl md:text-4xl font-bold">Services</h3>
         </div>
 
-        <div className="flex md:flex-row flex-col justify-center gap-6 md:gap-10 pt-[5vw] rounded-md shadow-md">
+        <div className="flex md:flex-row flex-col justify-center gap-6 md:gap-10 py-[2vw] rounded-md shadow-md">
           {services.map((item,index) => {
             return <div key={index}><Glassy icon={item.icon} name={item.title} /> </div>;
           })}
         </div>
+
+          <div className="flex justify-center align-center w-full mx-auto py-8 ">
+        <button className="text-white bg-gray-700 px-4 py-2 md:px-6 md:py-3 rounded-[1vw] font-bold uppercase hover:bg-blue-700">
+            View All Services
+          </button>
+          </div>
+
 
         <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>
           {({ isVisible }) => (
@@ -188,7 +195,7 @@ const Home = () => {
                 justifyContent: "center",
                 alignItems: "center",
               }}
-              className=" rounded-2xl flex justify-center items-center"
+              className=" rounded-2xl my-[5vw] sm:my-[0vw] flex justify-center items-center"
             >
               <div
                 ref={gradientRef}
@@ -205,56 +212,54 @@ const Home = () => {
                 } h-[100%] text-[2.5vw] w-[100%] cursor-pointer bg-black bg-opacity-10 rounded-2xl text-3xl md:text-4xl px-[4vw] text-white flex flex-row py-[7vw] gap-[0vw]`}
               >
                 <div className="flex flex-col w-[25%] justify-center items-center">
-                  <MdGroups className="text-blue-500 text-3xl md:text-5xl mb-4" />
+                  <MdGroups className="text-blue-500 text-2xl md:text-5xl mb-4" />
                   {isVisible && (
                     <div className="text-white font-bold">
                       <CountUp end={1} duration={2} />
                       K+
                     </div>
                   )}
-                  <div className="text-gray-400 text-lg md:text-2xl">Buyers</div>
+                  <div className="text-gray-400 text-sm sm:text-lg md:text-2xl">Buyers</div>
                 </div>
                 <div className="flex flex-col w-[25%] justify-center items-center">
-                  <FaBriefcase className="text-blue-500 text-3xl md:text-5xl mb-4" />
+                  <FaBriefcase className="text-blue-500 text-2xl md:text-5xl mb-4" />
                   {isVisible && (
                     <div className="text-white  font-bold">
                       <CountUp end={110} duration={2} />+
                     </div>
                   )}
-                  <div className="text-gray-400 text-lg md:text-2xl">Projects</div>
+                  <div className="text-gray-400 text-sm sm:text-lg md:text-2xl">Projects</div>
                 </div>
                 <div className="flex flex-col w-[25%] justify-center items-center">
-                  <TbDrone className="text-blue-500 text-3xl md:text-5xl mb-4" />
+                  <TbDrone className="text-blue-500 text-2xl md:text-5xl mb-4" />
                   {isVisible && (
                     <div className="text-white  font-bold">
                       <CountUp end={25} duration={2} />+
                     </div>
                   )}
-                  <div className="text-gray-400 text-lg md:text-2xl">Drones</div>
+                  <div className="text-gray-400 text-sm sm:text-lg md:text-2xl">Drones</div>
                 </div>
                 <div className="flex flex-col w-[25%] justify-center items-center">
-                  <FaUser className="text-blue-500 text-3xl md:text-5xl mb-4" />
+                  <FaUser className="text-blue-500 text-2xl md:text-5xl mb-4" />
                   {isVisible && (
                     <div className="text-white  font-bold">
                       <CountUp end={6} duration={2} />
                     </div>
                   )}
-                  <div className="text-gray-400 text-lg md:text-2xl">Employees</div>
+                  <div className="text-gray-400 text-sm sm:text-lg md:text-2xl">Employees</div>
                 </div>
               </div>
             </Tilt>
           )}
         </VisibilitySensor>
 
-        <div className="flex justify-center align-center w-[80%] mx-auto py-8 pb-6 my-8">
-          <button className="text-white bg-gray-700 px-6 py-3 rounded font-bold uppercase hover:bg-blue-700">
-            View All Projects
-          </button>
-        </div>
-
-        <Glassy2/>
         
-        <div className="mt-[8vw]">
+
+          <div className="sm:mt-[0] my-[10vw]">
+        <Glassy2/>
+          </div>
+        
+        <div className="mt-[5vw]">
         <Glassy3/>
         </div>
         

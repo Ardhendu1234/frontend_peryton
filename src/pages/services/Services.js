@@ -16,7 +16,7 @@ const Services = () => {
 
       <StyledHeading bg_text="Services" fg_text="Services" />
 
-      <div className="flex md:flex-row flex-col justify-center gap-10 pt-[5vw] rounded-md shadow-md">
+      <div className="flex md:flex-row flex-col justify-center gap-10 pt-[5vw] items-center rounded-md shadow-md">
           {services.map((item,index) => {
             return <div key={index} ><Glassy icon={item.icon} name={item.title} /> </div>;
           })}

@@ -82,13 +82,14 @@ const Glassy = ({ icon, name,subtitle }) => {
         style={{ clipPath: "inset(0)" }}
         className={`${
           cursor ? "border-[2px] border-blue-700 " : "border-[1px] border-blue-300"
-        } h-[100%] text-[2.5vw] w-[100%] cursor-pointer bg-black bg-opacity-10 rounded-2xl px-[4vw] text-white flex flex-col  ${subtitle ? "gap-[2vw] pt-[4vw]":"gap-[4vw] pt-[5vw]"}`}
+        } h-[100%] text-[4vw] md:text-[2.5vw] w-[100%] cursor-pointer  bg-black bg-opacity-10 rounded-2xl px-[4vw] text-white flex flex-col  ${subtitle ? "gap-[2vw] pt-[4vw]":"gap-[4vw] pt-[5vw]"}`}
       >
         <div>{icon}</div>
 
         <div>{name}</div>
+
         {subtitle && 
-        (<div className="text-[1.3vw]">
+        (<div className="text-[2vw] md:text-[1.3vw]">
           {subtitle}
         </div>
         )}

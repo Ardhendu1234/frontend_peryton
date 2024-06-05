@@ -270,10 +270,10 @@ export default function Header() {
                   About us
                 </Link>
                 <Link
-                  to="/blog"
+                  to="/ecommerce"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-50 hover:bg-gray-50"
                 >
-                  Blog
+                  Ecommerce
                 </Link>
                 <Link
                   to="/contact"

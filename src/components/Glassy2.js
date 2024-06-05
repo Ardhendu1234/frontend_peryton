@@ -67,7 +67,7 @@ const Glassy2 = ({ icon, name,subtitle }) => {
         justifyContent: "center",
         alignItems: "center",
       }}
-     className="h-[33vw] md:h-[28vw] w-[70vw]"
+     className="h-fit md:h-[28vw] w-[80vw] mb-[5vw] sm:my-[0]"
     >
       {/* Gradient clipped by parent using clip-path */}
       <div
@@ -95,10 +95,10 @@ const Glassy2 = ({ icon, name,subtitle }) => {
          </div>
        
 
-        <div className="flex flex-row gap-[6vw] md:gap-[4vw] mb-0 justify-center items-center rounded-md">
+        <div className="flex flex-row gap-[6vw] md:gap-[4vw] pb-[5vw] sm:pb-[0vw] justify-center items-center rounded-md">
           {customers.map((item) => {
             return (
-              <img src={item.image} alt={item.name} className="md:h-20 lg:h-24 h-14 w-auto" />
+              <img src={item.image} alt={item.name} className="md:h-20 lg:h-24 h-10 w-auto" />
             );
           })}
         </div>

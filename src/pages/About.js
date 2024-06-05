@@ -19,7 +19,7 @@ const About = () => {
         <h3 className="text-white md:text-7xl text-4xl font-bold">Our Team</h3>
       </div>
 
-      <div className="flex md:flex-row flex-col gap-6 justify-between items-start w-[80%] h-auto min-w-[300px] mx-auto overflow-hidden shrink-0 rounded-md shadow-md mt-5">
+      <div className="flex  md:flex-row flex-col gap-6 justify-between md:items-start w-[80%] items-center h-auto min-w-[300px] mx-auto overflow-hidden shrink-0 rounded-md shadow-md mt-5">
         {team.map((item) => {
           return (
             <div className="flex flex-col items-center justify-center align-middle sm:w-[420px] sm:h-[420px] w-[300px] h-[300px] rounded-lg">

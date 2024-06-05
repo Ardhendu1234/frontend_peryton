@@ -63,15 +63,14 @@ const Glassy3 = () => {
       options={defaultOptions}
       style={{
         clipPath: cursor ? "inset(0)" : "none",
-        width: "70vw",
-        height: "27vw",
-        borderRadius: "1rem",
+        width: "80vw",
         display: "flex",
         justifyContent: "center",
-        alignItems: "center",
-        transformStyle: 'preserve-3d',
+        alignItems:"center",
+        transformStyle:'preserve-3d',
       }}
-     
+      
+     className="h-fit"
     >
       {/* Gradient clipped by parent using clip-path */}
       <div
@@ -89,18 +88,18 @@ const Glassy3 = () => {
             clipPath: "inset(0)" 
         }}
         className={`${
-          cursor ? "border-[2px] border-blue-700 " : "border-[1px] border-blue-200"
-        } h-[100%] pb-[2vw] justify-center items-center text-[2.5vw] w-[100%] cursor-pointer flex flex-col bg-black bg-opacity-10 rounded-2xl px-[4vw] text-white`}
+          cursor ? "border-[2px] border-blue-700 " : " "
+        } h-[100%] pb-[4vw] sm:py-[2vw] justify-center items-center text-[2.5vw] w-[100%] cursor-pointer flex flex-col bg-black bg-opacity-10 rounded-2xl px-[4vw] text-white `}
       >
-        <div className="flex flex-row  w-full">
-            <div className="md:w-1/2 w-full flex flex-col ">
+        <div className="flex flex-row w-full">
+            <div className="md:w-1/2 w-full flex flex-col">
               <div className="w-full bg-transparent">
                 <h2 className="text-white text-2xl md:text-3xl lg:text-5xl font-bold">
                   Let's Connect
                 </h2>
                 <Link
                   to="/contact"
-                  className="bg-blue-700 py-2 lg:py-4 px-10 lg:px-16 rounded-[1vw] text-white font-bold text-lg md:text-2xl hover:bg-gray-200 hover:text-blue-700 "
+                  className="bg-blue-700 py-2 sm:py-4 px-10 sm:px-16 rounded-[1vw] text-white font-bold text-lg md:text-2xl hover:bg-gray-200 hover:text-blue-700 "
                 >
                   Contact
                 </Link>
@@ -110,9 +109,9 @@ const Glassy3 = () => {
               src="imgs/dronePNG.png"
               alt="drone"
               style={{ 
-                transform: 'translateZ(600px)',
+              transform: 'translateZ(600px)',
             }}
-              className="w-[30vw] h-[18vw] mt-[2vw] hover:scale-105 transition-all duration-100 ease-linear"
+              className="w-[30vw] h-[18vw] mt-[8vw] sm:mt-[2vw] hover:scale-105 transition-all duration-100 ease-linear"
             />
           </div>
       </div>
