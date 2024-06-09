@@ -10,7 +10,7 @@ const Contact = () => {
   const breadCrumbs = useBreadCrumbs();
 
   return (
-    <div className="bg-gray-950 w-full h-full py-8 pb-32">
+    <div className="bg-gray-950 w-full h-full py-8 pb-[40vh] overflow-hidden">
       <BreadCrumbBar breadCrumbs={breadCrumbs} />
 
       <StyledHeading bg_text="Contact" fg_text="Contact" />

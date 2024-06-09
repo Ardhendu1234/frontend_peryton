@@ -69,12 +69,12 @@ const Glassy = ({ icon, name, subtitle,servicePage,handleClick,itemName }) => {
        className="md:w-[28vw] md:h-[25vw] w-[55vw] h-[32vw] rounded-2xl flex justify-center items-center"
     >
       {/* Gradient clipped by parent using clip-path */}
-      <div
+     {cursor && (<div
         ref={gradientRef}
         className={`gradient-blue z-[-10] rounded-full h-[140px] blur-[100px] w-[270px] absolute cursor ${
           cursor ? "opacity-100" : "opacity-0"
         }`}
-      />
+      />)}
 
       <div
         onMouseEnter={toggle}

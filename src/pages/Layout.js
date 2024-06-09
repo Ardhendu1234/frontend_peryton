@@ -5,13 +5,13 @@ import Footer from "../components/footer";
 
 const Layout = () => {
   return (
-    < >
+    <div className=" flex flex-col">
       <Header />
 
       <Outlet />
 
       <Footer/>
-    </>
+    </div>
   );
 };
 

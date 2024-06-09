@@ -23,7 +23,7 @@ const Services = () => {
   };
 
   return (
-    <div className="bg-gray-950 w-full h-full py-8 pb-32">
+    <div className="bg-gray-950 w-full h-full py-8 pb-32 overflow-hidden">
       <BreadCrumbBar breadCrumbs={breadCrumbs} />
 
       <StyledHeading bg_text="Services" fg_text="Services" />
