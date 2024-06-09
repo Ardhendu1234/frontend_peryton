@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Tilt } from "react-tilt";
 
-const Glassy = ({ icon, name,subtitle }) => {
+const Glassy = ({ icon, name, subtitle,servicePage,handleClick,itemName }) => {
   const main = useRef(null);
   const [cursor, setCursor] = useState(false);
   const gradientRef = useRef(null);
@@ -75,6 +75,7 @@ const Glassy = ({ icon, name,subtitle }) => {
           cursor ? "opacity-100" : "opacity-0"
         }`}
       />
+
       <div
         onMouseEnter={toggle}
         onMouseLeave={toggle2}
@@ -82,7 +83,7 @@ const Glassy = ({ icon, name,subtitle }) => {
         style={{ clipPath: "inset(0)" }}
         className={`${
           cursor ? "border-[2px] border-blue-700 " : "border-[1px] border-blue-300"
-        } h-[100%] text-[4vw] md:text-[2.5vw] w-[100%] cursor-pointer  bg-black bg-opacity-10 rounded-2xl px-[4vw] text-white flex flex-col  ${subtitle ? "gap-[2vw] pt-[4vw]":"gap-[4vw] pt-[5vw]"}`}
+        } h-[100%] text-[4vw] md:text-[2.5vw] w-[100%] cursor-pointer  bg-black bg-opacity-10 rounded-2xl px-[4vw] text-white flex flex-col  ${subtitle ? "gap-[2vw] pt-[4vw]":"gap-[4vw] pt-[5vw]"} ${servicePage ? "gap-[2vw] pt-[2vw]":"gap-[4vw] pt-[5vw]"}`}
       >
         <div>{icon}</div>
 
@@ -94,7 +95,16 @@ const Glassy = ({ icon, name,subtitle }) => {
         </div>
         )}
 
+        {servicePage && 
+        (<div 
+        onClick={()=>{itemName(name);handleClick()}}
+         className="px-[1vw] w-fit bg-blue-600 text-[1.5vw] py-[0.4vw] rounded-lg">
+          Contact
+        </div>)
+        }
+
       </div>
+
     </Tilt>
   );
 };
