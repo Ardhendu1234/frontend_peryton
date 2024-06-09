@@ -18,3 +18,7 @@ background: radial-gradient(radial, rgb(5, 204, 88) 0%, rgba(235, 14, 40, 0) 100
 .bg-image {
     background-position: center center;
   }
+
+  .aspect_ratio {
+    aspect-ratio: 2 / 3; /* Aspect ratio: 16:9 */
+  }

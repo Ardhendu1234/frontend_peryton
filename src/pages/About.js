@@ -19,21 +19,22 @@ const About = () => {
         <h3 className="text-white md:text-7xl text-4xl font-bold">Our Team</h3>
       </div>
 
-      <div className="flex  md:flex-row flex-col gap-6 justify-between md:items-start w-[80%] items-center h-auto min-w-[300px] mx-auto overflow-hidden shrink-0 rounded-md shadow-md mt-5">
+      <div className="flex  md:flex-row flex-col gap-3 md:gap-6 justify-between md:items-start w-[80%] items-center h-auto min-w-[300px] mx-auto overflow-hidden shrink-0 rounded-md shadow-md mt-5">
         {team.map((item) => {
           return (
-            <div className="flex flex-col items-center justify-center align-middle sm:w-[420px] sm:h-[420px] w-[300px] h-[300px] rounded-lg">
-              <div
-                style={{
-                  backgroundImage: `url("${item.image}")`,
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                  backgroundSize: "contain",
-                }}
-                className="w-[100%] h-[100%] rounded-2xl "
-              ></div>
-              <div className="text-white text-2xl mb-2 mt-[0.5vw]">{item.name}</div>
-              <div className="text-blue-700 text-l font-bold mb-8 text-center">
+            <div className="flex flex-col items-center justify-center rounded-lg">
+              <div className=" w-[35vw] h-[40vw] md:w-[18vw] md:h-[20vw]">
+              <img
+                src={item.image}
+                alt={item.name}
+                className="h-[100%] w-[100%] object-fit rounded-2xl"
+              />
+              </div>
+              
+              <div className="text-white text-[3vw] md:text-[1.8vw] mb-2 mt-[0.5vw]">
+                {item.name}
+              </div>
+              <div className="text-blue-700 text-[2.25vw] md:text-[1.25vw] font-bold mb-8 text-center">
                 {item.title}
               </div>
             </div>
