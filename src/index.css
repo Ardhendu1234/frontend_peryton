@@ -14,3 +14,7 @@ background: radial-gradient(radial, rgb(4, 82, 154) 0%, rgba(235, 14, 40, 0) 100
     background: rgb(19, 229, 92);
 background: radial-gradient(radial, rgb(5, 204, 88) 0%, rgba(235, 14, 40, 0) 100%);
 }
+
+.bg-image {
+    background-position: center center;
+  }

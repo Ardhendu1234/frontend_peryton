@@ -66,7 +66,7 @@ const Glassy = ({ icon, name, subtitle,servicePage,handleClick,itemName }) => {
         justifyContent: "center",
         alignItems: "center",
       }}
-       className="md:w-[28vw] md:h-[23vw] w-[60vw] h-[32vw] rounded-2xl flex justify-center items-center"
+       className="md:w-[28vw] md:h-[25vw] w-[60vw] h-[32vw] rounded-2xl flex justify-center items-center"
     >
       {/* Gradient clipped by parent using clip-path */}
       <div
@@ -83,14 +83,15 @@ const Glassy = ({ icon, name, subtitle,servicePage,handleClick,itemName }) => {
         style={{ clipPath: "inset(0)" }}
         className={`${
           cursor ? "border-[2px] border-blue-700 " : "border-[1px] border-blue-300"
-        } h-[100%] text-[4vw] md:text-[2.5vw] w-[100%] cursor-pointer  bg-black bg-opacity-10 rounded-2xl px-[4vw] text-white flex flex-col  ${subtitle ? "gap-[2vw] pt-[4vw]":"gap-[4vw] pt-[5vw]"} ${servicePage ? "gap-[2vw] pt-[2vw]":"gap-[4vw] pt-[5vw]"}`}
+        }  text-[4vw] md:text-[2vw] h-[100%] cursor-pointer  bg-black bg-opacity-10 rounded-2xl text-white flex flex-col ${subtitle ? "gap-[2vw] pt-[4vw]":"gap-[4vw] pt-[5vw]"} ${servicePage ? "gap-[1vw] pt-[0vw]":"gap-[4vw] pt-[5vw]"}`}
       >
-        <div>{icon}</div>
 
-        <div>{name}</div>
+        {/* <div>{icon}</div> */}
+        <img src={icon} className="w-[30vw] rounded-2xl"/>
+        <div className="ml-[2vw]">{name}</div>
 
         {subtitle && 
-        (<div className="text-[2vw] md:text-[1.3vw]">
+        (<div className="text-[2vw]  md:text-[1.3vw]">
           {subtitle}
         </div>
         )}
@@ -98,7 +99,7 @@ const Glassy = ({ icon, name, subtitle,servicePage,handleClick,itemName }) => {
         {servicePage && 
         (<div 
         onClick={()=>{itemName(name);handleClick()}}
-         className="px-[1vw] w-fit bg-blue-600 text-[1.5vw] py-[0.4vw] rounded-lg">
+         className="px-[1vw] ml-[2vw] w-fit bg-blue-600 text-[1.5vw] py-[0.4vw] rounded-lg">
           Contact
         </div>)
         }

@@ -22,7 +22,7 @@ function Ecommerce() {
         {Ecomdata.map((item) => (
           <div key={item.id} className="border p-4 rounded-lg shadow-md">
             <Link to={`/item/${item.id}`}>
-              <img src={item.path} alt={item.name} className="w-full h-48 object-cover mb-4" />
+              <img src={item.path} alt={item.name} className="w-full h-48 object-fit mb-4" />
               <h2 className="text-xl font-semibold">{item.name}</h2>
             </Link>
             <button

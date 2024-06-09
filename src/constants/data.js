@@ -46,17 +46,19 @@ export const products = [
 export const services = [
   {
     id: 1,
-    icon: <FaMap />,
+    icon: "imgs/3dmapping.webp",
     title: "3D Mapping",
   },
   {
     id: 2,
-    icon: <IoFlower />,
+    // icon: <IoFlower />,
+    icon: "imgs/3dmapping.webp",
     title: "Flower Dropping",
   },
   {
     id: 3,
-    icon: <FaWandMagicSparkles />,
+    // icon: <FaWandMagicSparkles />,
+    icon: "imgs/3dmapping.webp",
     title: "Light Shows",
   },
 ];
