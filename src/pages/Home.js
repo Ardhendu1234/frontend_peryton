@@ -171,7 +171,7 @@ const Home = () => {
 
         <div className="flex md:flex-row flex-col justify-center gap-6 md:gap-10 py-[2vw] rounded-md shadow-md">
           {services.map((item,index) => {
-            return <div key={index}><Glassy icon={item.icon} name={item.title} /> </div>;
+            return <div key={index}><Glassy icon={item.icon} name={item.title} servicePage={true}/> </div>;
           })}
         </div>
 
