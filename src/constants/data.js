@@ -65,7 +65,7 @@ export const customers = [
   {
     id: 1,
     name: "startupindia",
-    image: "imgs/startup.png",
+    image: "imgs/startupnew.png",
   },
   {
     id: 2,

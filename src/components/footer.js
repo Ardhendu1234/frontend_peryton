@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import JoinForm from "./joinForm";
 
 const Footer = () => {
+  const [active,SetActive]=useState(false)
+
+  const handleClick=()=>{
+    SetActive(!active)
+  }
+
   return (
     <div
       className="w-[100vw] py-[2vw] px-[3vw] flex flex-col bg-gray-950"
@@ -19,7 +26,9 @@ const Footer = () => {
                 placeholder="Email Address"
                 className="w-[160px] md:w-[240px] min-h-[40px] bg-gray-800 text-white py-4 px-4"
               />
-              <button className="w-[80px] md:w-[100px] min-h-[40px] bg-blue-700 text-white py-4 font-bold hover:bg-gray-700 hover: hover:text-blue-700">
+              <button 
+              onClick={handleClick}
+              className="w-[80px] md:w-[100px] min-h-[40px] bg-blue-700 text-white py-4 font-bold hover:bg-gray-700 hover: hover:text-blue-700">
                 JOIN
               </button>
             </div>
@@ -86,7 +95,11 @@ const Footer = () => {
           </Link>
         </div>
       </div>
-      
+      {active && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <JoinForm onClose={handleClick} />
+        </div>
+      )}
     </div>
   );
 };
