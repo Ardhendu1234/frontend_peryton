@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Tilt } from "react-tilt";
 import { Link } from "react-router-dom";
-import { customers, } from "../constants/data";
+
 
 const Glassy3 = () => {
   const main = useRef(null);

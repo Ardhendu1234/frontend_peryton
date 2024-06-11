@@ -175,11 +175,13 @@ const Home = () => {
           })}
         </div>
 
-          <div className="flex justify-center align-center w-full mx-auto py-8 ">
+          <a href="/services"
+
+          className="flex justify-center align-center w-full mx-auto py-8 ">
         <button className="text-white bg-gray-700 px-4 py-2 md:px-6 md:py-3 rounded-[1vw] font-bold uppercase hover:bg-blue-700">
             View All Services
           </button>
-          </div>
+          </a>
 
 
         <VisibilitySensor partialVisibility offset={{ bottom: 200 }}>

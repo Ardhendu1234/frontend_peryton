@@ -14,7 +14,8 @@ import BlogCategory from "./pages/blogs/BlogCategory";
 import BlogAuthor from "./pages/blogs/BlogAuthor";
 import BlogDate from "./pages/blogs/BlogDate";
 import Demo from "./pages/Demo";
- import Ecommerce from "./pages/ecom";
+ import Ecommerce from "./pages/ecommerce";
+import AdminLogin from "./components/AdminLogin";
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="demo" element={<Demo/>}/>
+          <Route path="adminlogin" element={<AdminLogin/>}/>
         </Route>
       </Routes>
     </Router>

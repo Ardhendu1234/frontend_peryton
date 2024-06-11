@@ -1,9 +1,10 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Tilt } from "react-tilt";
 
-const Glassy = ({ icon, name, subtitle,servicePage,handleClick,itemName }) => {
+const Glassy = ({ icon, name, subtitle, servicePage, handleClick, itemName }) => {
   const main = useRef(null);
   const [cursor, setCursor] = useState(false);
+  const cursorRef = useRef(null);
   const gradientRef = useRef(null);
 
   const toggle = () => {
@@ -15,7 +16,6 @@ const Glassy = ({ icon, name, subtitle,servicePage,handleClick,itemName }) => {
   };
 
   useEffect(() => {
-    const cursorElement = document.querySelector(".cursor");
     const handleCursor = (event) => {
       const containerRect = main.current.getBoundingClientRect();
       const containerHeight = containerRect.height;
@@ -29,8 +29,10 @@ const Glassy = ({ icon, name, subtitle,servicePage,handleClick,itemName }) => {
       newLeft = (newLeft / containerWidth) * 100;
 
       // Update cursor position
-      cursorElement.style.left = `${newLeft-5}%`;
-      cursorElement.style.top = `${newTop}%`;
+      if (cursorRef.current) {
+        cursorRef.current.style.left = `${newLeft - 5}%`;
+        cursorRef.current.style.top = `${newTop}%`;
+      }
 
       // Update gradient position
       if (gradientRef.current) {
@@ -40,8 +42,6 @@ const Glassy = ({ icon, name, subtitle,servicePage,handleClick,itemName }) => {
     };
 
     main.current.addEventListener("mousemove", handleCursor);
-
-
   }, []);
 
   const defaultOptions = {
@@ -66,16 +66,21 @@ const Glassy = ({ icon, name, subtitle,servicePage,handleClick,itemName }) => {
         justifyContent: "center",
         alignItems: "center",
       }}
-       className="md:w-[28vw] md:h-[25vw] w-[55vw] h-[32vw] rounded-2xl flex justify-center items-center"
+      className="md:w-[28vw] md:h-[25vw] w-[55vw] h-[32vw] rounded-2xl flex justify-center items-center"
     >
       {/* Gradient clipped by parent using clip-path */}
-     {cursor && (<div
-        ref={gradientRef}
-        className={`gradient-blue z-[-10] rounded-full h-[140px] blur-[100px] w-[270px] absolute cursor ${
-          cursor ? "opacity-100" : "opacity-0"
-        }`}
-      />)}
-
+      {cursor && (
+        <div
+          ref={gradientRef}
+          className={`gradient-blue z-[-10] rounded-full h-[140px] blur-[100px] w-[270px] absolute cursor ${
+            cursor ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      )}
+      <div
+        ref={cursorRef}
+        className={`cursor ${cursor ? "opacity-100" : "opacity-0"}`}
+      />
       <div
         onMouseEnter={toggle}
         onMouseLeave={toggle2}
@@ -83,30 +88,28 @@ const Glassy = ({ icon, name, subtitle,servicePage,handleClick,itemName }) => {
         style={{ clipPath: "inset(0)" }}
         className={`${
           cursor ? "border-[2px] border-blue-700 " : "border-[1px] border-blue-300"
-        }  text-[4vw] md:text-[2vw] h-[100%]  cursor-pointer  bg-black bg-opacity-10 rounded-2xl  text-white flex flex-col ${servicePage ? "gap-[1vw]":"gap-[4vw] pt-[5vw] px-[4vw] w-[100%]"}`}
+        }  text-[4vw] md:text-[2vw] h-[100%]  cursor-pointer  bg-black bg-opacity-10 rounded-2xl  text-white flex flex-col ${
+          servicePage ? "gap-[1vw]" : "gap-[4vw] pt-[5vw] px-[4vw] w-[100%]"
+        }`}
       >
-
-        
-        {!servicePage && (<div>{icon}</div>) }
-       {servicePage && (<img src={icon} className="w-[30vw] rounded-2xl"/>) } 
-        <div className={`${servicePage ? "ml-[2vw]":""} `}>{name}</div>
-
-        {subtitle && 
-        (<div className="text-[2vw] md:text-[1.3vw]">
-          {subtitle}
-        </div>
+        {!servicePage && <div>{icon}</div>}
+        {servicePage && <img src={icon} className="w-[30vw] rounded-2xl" />}
+        <div className={`${servicePage ? "ml-[2vw]" : ""}`}>{name}</div>
+        {subtitle && (
+          <div className="text-[2vw] md:text-[1.3vw]">{subtitle}</div>
         )}
-
-        {servicePage && 
-        (<div 
-        onClick={()=>{itemName(name);handleClick()}}
-         className="px-[1vw] ml-[2vw] w-fit bg-blue-600 text-[1.5vw] py-[0.4vw] rounded-lg">
-          Contact
-        </div>)
-        }
-
+        {servicePage && (
+          <div
+            onClick={() => {
+              itemName(name);
+              handleClick();
+            }}
+            className="px-[1vw] ml-[2vw] w-fit bg-blue-600 text-[1.5vw] py-[0.4vw] rounded-lg"
+          >
+            Contact
+          </div>
+        )}
       </div>
-
     </Tilt>
   );
 };

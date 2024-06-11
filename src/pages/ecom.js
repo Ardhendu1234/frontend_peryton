@@ -1,10 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Ecomdata } from '../constants/Ecomdata';
 import ContactForm from '../components/ContactForm';
+import axios from "axios"
+import { getProductType } from '../constants/apiCalls';
 
 
 function Ecommerce() {
+  const [productType,setProductType]=useState()
+  
+  
+  useEffect(()=>{
+    const data=getProductType();
+    setProductType(data)
+  },[])
+
+
+
   const [selectedItem, setSelectedItem] = useState(null);
 
   const handleButtonClick = (item) => {

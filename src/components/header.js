@@ -1,17 +1,16 @@
-import { Fragment, useEffect, useState } from "react";
-import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
+import {  useEffect, useState } from "react";
+import {  Popover } from "@headlessui/react";
 import {
   Bars3Icon,
   XMarkIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 import {
-  ChevronDownIcon,
   PhoneIcon,
   PlayCircleIcon,
 } from "@heroicons/react/20/solid";
 import { Link, useLocation } from "react-router-dom";
-import { products } from "../constants/data";
+// import { products } from "../constants/data";
 
 const callsToAction = [
   { name: "Watch demo", href: "#", icon: PlayCircleIcon },
@@ -195,8 +194,8 @@ export default function Header() {
           </Link>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Link to="/" className="text-sm font-semibold leading-6 text-gray-50">
-            <MagnifyingGlassIcon className="h-5 w-5 flex-none" />
+          <Link to="#" className="text-sm font-semibold leading-6 text-gray-50">
+            <MagnifyingGlassIcon className="h-5 w-5 flex-none hidden" />
           </Link>
         </div>
       </nav>
@@ -332,7 +331,7 @@ export default function Header() {
                   Contact
                 </Link>
               </div>
-              <div className="py-6">
+              {/* <div className="py-6">
                 <Link
                   to="#"
                   onClick={()=>{setMobileMenuOpen(false)}}
@@ -340,7 +339,7 @@ export default function Header() {
                 >
                   <MagnifyingGlassIcon className="h-5 w-5 flex-none" />
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
