@@ -96,7 +96,7 @@ function Ecommerce() {
 
     <div className="flex p-[1vw] flex-wrap justify-center md:justify-start items-center gap-[2vw] bg-zinc-700 w-[70vw] sm:w-[85vw] pl-[1.5vw]">
         {allProducts.filter((product)=>product.productType===type).map((item,key)=>(
-             <ProductCard item={item} key={key} handleButtonClick={handleButtonClick} setUpdateItem={setUpdateItem}/>
+             <ProductCard item={item} key={key} handleButtonClick={handleButtonClick} setUpdateItem={setUpdateItem} setUpdateProductForm={setUpdateProductForm}/>
         ))}
     </div>
     {selectedItem && (
@@ -113,7 +113,7 @@ function Ecommerce() {
 
     {updateProductForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <UpdateProductForm item={selectedItem} onClose={handleUpdateForm} />
+          <UpdateProductForm updateItem={updateItem} onClose={handleUpdateForm} />
         </div>
       )}
      

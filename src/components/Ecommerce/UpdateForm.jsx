@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-const UpdateProductForm = ({ initialProduct }) => {
-  const [name, setName] = useState(initialProduct.name);
-  const [description, setDescription] = useState(initialProduct.description);
-  const [price, setPrice] = useState(initialProduct.price);
-  const [productType, setProductType] = useState(initialProduct.productType);
-  const [stock, setStock] = useState(initialProduct.stock);
+const UpdateProductForm = ({ updateItem,onClose }) => {
+  const [name, setName] = useState(updateItem.name);
+  const [description, setDescription] = useState(updateItem.description);
+  const [price, setPrice] = useState(updateItem.price);
+  const [productType, setProductType] = useState(updateItem.productType);
+  const [stock, setStock] = useState(updateItem.stock);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -22,13 +22,13 @@ const UpdateProductForm = ({ initialProduct }) => {
   return (
     <div className="max-w-md mx-auto">
       <h2 className="text-2xl font-bold mb-4 text-center">Update Product</h2>
-      <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <form onSubmit={handleSubmit} className="bg-white  rounded px-8 pt-6 pb-8 mb-4">
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="name">
             Name
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className=" border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="name"
             type="text"
             placeholder="Name"
@@ -42,7 +42,7 @@ const UpdateProductForm = ({ initialProduct }) => {
             Description
           </label>
           <textarea
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className=" border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="description"
             placeholder="Description"
             value={description}
@@ -55,7 +55,7 @@ const UpdateProductForm = ({ initialProduct }) => {
             Price
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className=" border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="price"
             type="number"
             placeholder="Price"
@@ -69,7 +69,7 @@ const UpdateProductForm = ({ initialProduct }) => {
             Product Type
           </label>
           <select
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className=" border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="productType"
             value={productType}
             onChange={(e) => setProductType(e.target.value)}
@@ -93,7 +93,7 @@ const UpdateProductForm = ({ initialProduct }) => {
             Stock
           </label>
           <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            className=" border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="stock"
             type="number"
             placeholder="Stock"
@@ -109,6 +109,13 @@ const UpdateProductForm = ({ initialProduct }) => {
           >
             Update Product
           </button>
+          <button
+          type="button"
+          onClick={onClose}
+          className="ml-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700 transition duration-300"
+        >
+          Cancel
+        </button>
         </div>
       </form>
     </div>
