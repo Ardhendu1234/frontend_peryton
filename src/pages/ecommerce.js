@@ -11,11 +11,11 @@ function Ecommerce() {
 
   const [productType,setProductType]=useState([])
   const [allProducts,setAllProducts]=useState([])
-  const [uploadProductForm,setUploadProductForm]=useState(true)
+  const [uploadProductForm,setUploadProductForm]=useState(false)
   const [updateProductForm,setUpdateProductForm]=useState(false)
   const [selectedItem, setSelectedItem] = useState(null);
   const [updateItem,setUpdateItem]=useState()
-  const [type,setType]=useState("HEllo")
+  const [type,setType]=useState("FPV Goggles")
   
   useEffect(()=>{
 
@@ -94,7 +94,7 @@ function Ecommerce() {
         </div>
      
 
-    <div className="flex p-[1vw] flex-wrap justify-center md:justify-start items-center gap-[2vw] bg-zinc-700 w-[70vw] sm:w-[85vw] pl-[1.5vw]">
+    <div className="flex p-[1vw] flex-wrap justify-center md:justify-start items-center md:items-start gap-[2vw] bg-zinc-700 w-[70vw] sm:w-[85vw] pl-[1.5vw]">
         {allProducts.filter((product)=>product.productType===type).map((item,key)=>(
              <ProductCard item={item} key={key} handleButtonClick={handleButtonClick} setUpdateItem={setUpdateItem} setUpdateProductForm={setUpdateProductForm}/>
         ))}

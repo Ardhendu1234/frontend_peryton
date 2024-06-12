@@ -1,4 +1,6 @@
 import React from "react";
+import axios from 'axios'
+import { ECOMM_URL } from "../../constants/apiCalls";
 
 const ProductCard = ({
   item,
@@ -7,6 +9,18 @@ const ProductCard = ({
   setUpdateItem,
   setUpdateProductForm,
 }) => {
+
+  const deleteProduct=async(id)=>{
+    try {
+      console.log(id)
+      const res=await axios.delete(`${ECOMM_URL}/deleteProduct?_id=${id}`)
+    if(res){
+      window.location.reload();
+    }
+    } catch (error) {
+      console.log(error,"not able to delte the product")
+    }
+  }
   return (
     <div
       key={key}
@@ -51,20 +65,19 @@ const ProductCard = ({
                 setUpdateItem(item);
                 setUpdateProductForm(true);
               }}
-              className="bg-blue-500 hover:bg-blue-700 text-[2vw] md:text-[1vw] text-white font-bold py-[0.5vw] px-[1vw] rounded focus:outline-none mt-[0.5vw] w-fit focus:shadow-outline"
+              className="bg-blue-500 hover:bg-blue-700 text-[2vw] md:text-[1vw] text-white font-bold py-[0.5vw] px-[1vw]  focus:outline-none w-1/2 focus:shadow-outline"
               type="submit"
             >
               Edit
             </button>
             <button
               onClick={() => {
-                setUpdateItem(item);
-                setUpdateProductForm(true);
+                deleteProduct(item._id)
               }}
-              className="bg-red-500 hover:bg-red-700 text-[2vw] md:text-[1vw] text-white font-bold py-[0.5vw] px-[1vw] rounded focus:outline-none mt-[0.5vw] w-fit focus:shadow-outline"
+              className="bg-red-500 hover:bg-red-700 text-[2vw] md:text-[1vw] text-white font-bold py-[0.5vw] px-[1vw]  focus:outline-none w-1/2 focus:shadow-outline"
               type="submit"
             >
-              Delete
+              Delete 
             </button>
           </div>
         </div>
