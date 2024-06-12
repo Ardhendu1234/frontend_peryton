@@ -113,7 +113,7 @@ const UploadProductForm = ({onClose,productTypeData}) => {
           >
             <option value="">Select Product Type</option>
             {productTypeData?.map((item,key)=>(
-              <option key={key} value={item}>{item}</option>
+              <option key={key} value={item.name}>{item.name}</option>
             ))}
           </select>
         </div>

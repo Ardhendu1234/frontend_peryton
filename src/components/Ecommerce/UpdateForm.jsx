@@ -1,48 +1,43 @@
-import React, { useState } from 'react';
-import { ECOMM_URL } from '../../constants/apiCalls';
-import axios  from 'axios'
+import React, { useState } from "react";
+import { ECOMM_URL } from "../../constants/apiCalls";
+import axios from "axios";
 
-const UpdateProductForm = ({ updateItem,onClose,productTypeData }) => {
+const UpdateProductForm = ({ updateItem, onClose, productTypeData }) => {
   const [name, setName] = useState(updateItem.name);
   const [description, setDescription] = useState(updateItem.description);
   const [price, setPrice] = useState(updateItem.price);
   const [productType, setProductType] = useState(updateItem.productType);
   const [stock, setStock] = useState(updateItem.stock);
 
-  const handleSubmit =async (id) => {
+  const handleSubmit = async (id) => {
     try {
-      
-      console.log( 
-        id,
-        name,
-        description,
-        price,
-        productType,
-        stock,
-      )
+      console.log(id, name, description, price, productType, stock);
 
-      const res = await axios.post(`${ECOMM_URL}/updateProduct`, {
-        _id:id,
-        name,
-        description,
-        price,
-        productType,
-        stock,
-      }, {
-      headers: {
-        'Accept': 'application/json'
-      },
-    });
-
+      const res = await axios.post(
+        `${ECOMM_URL}/updateProduct`,
+        {
+          _id: id,
+          name,
+          description,
+          price,
+          productType,
+          stock,
+        },
+        {
+          headers: {
+            Accept: "application/json",
+          },
+        }
+      );
     } catch (error) {
-      console.log("there is error while sending request")
+      console.log("there is error while sending request");
     }
   };
 
   return (
     <div className="max-w-md mx-auto">
       <h2 className="text-2xl font-bold mb-4 text-center">Update Product</h2>
-      <form  className="bg-white  rounded px-8 pt-6 pb-8 mb-4">
+      <form className="bg-white  rounded px-8 pt-6 pb-8 mb-4">
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="name">
             Name
@@ -58,7 +53,10 @@ const UpdateProductForm = ({ updateItem,onClose,productTypeData }) => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="description">
+          <label
+            className="block text-gray-700 font-bold mb-2"
+            htmlFor="description"
+          >
             Description
           </label>
           <textarea
@@ -85,7 +83,10 @@ const UpdateProductForm = ({ updateItem,onClose,productTypeData }) => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="productType">
+          <label
+            className="block text-gray-700 font-bold mb-2"
+            htmlFor="productType"
+          >
             Product Type
           </label>
           <select
@@ -96,8 +97,10 @@ const UpdateProductForm = ({ updateItem,onClose,productTypeData }) => {
             required
           >
             <option value="">Select Product Type</option>
-            {productTypeData?.map((item,key)=>(
-              <option key={key} value={item}>{item}</option>
+            {productTypeData?.map((item, key) => (
+              <option key={key} value={item.name}>
+                {item.name}
+              </option>
             ))}
           </select>
         </div>
@@ -117,18 +120,21 @@ const UpdateProductForm = ({ updateItem,onClose,productTypeData }) => {
         </div>
         <div className="flex items-center justify-between">
           <button
-          onClick={()=>handleSubmit(updateItem._id)}
+            onClick={() => {
+              handleSubmit(updateItem._id);
+              onClose();
+            }}
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
-            Update 
+            Update
           </button>
           <button
-          type="button"
-          onClick={onClose}
-          className="ml-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700 transition duration-300"
-        >
-          Cancel
-        </button>
+            type="button"
+            onClick={onClose}
+            className="ml-4 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-700 transition duration-300"
+          >
+            Cancel
+          </button>
         </div>
       </form>
     </div>

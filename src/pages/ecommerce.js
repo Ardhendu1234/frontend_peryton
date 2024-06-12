@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ContactForm from '../components/ContactForm';
-import { ECOMM_URL } from '../constants/apiCalls';
+import { ECOMM_URL,Category_url } from '../constants/apiCalls';
 import axios from 'axios'
 import ProductCard from '../components/Ecommerce/ProductCard';
 import UpdateProductForm from '../components/Ecommerce/UpdateForm';
@@ -32,11 +32,16 @@ function Ecommerce() {
         }
     };
 
-     const getProductType = async () => {
+    getAllProduct()
+  },[])
+
+  useEffect(()=>{
+    const getProductType = async () => {
         try {
-          const res = await axios.get(`${ECOMM_URL}/getProductType`);
+          const res = await axios.get(`${Category_url}/getAllCategory`);
           if (res) {
             const data=res.data.data
+            console.log(data)
             setProductType(data)
           }
         } catch (error) {
@@ -45,10 +50,7 @@ function Ecommerce() {
     };
 
     getProductType()
-    getAllProduct()
-
-
-  },[allProducts])
+  },[])
 
 
 
@@ -80,10 +82,10 @@ function Ecommerce() {
         <div className='w-full'>
          {productType?.map((item,key)=>(
             <div 
-            onClick={()=>handleClick(item)}
+            onClick={()=>handleClick(item.name)}
             key={key} 
-            className={`py-[0.5vw] cursor-pointer border-b-[1px] border-black px-[2vw] font-medium ${type===item ? "bg-amber-500 text-white scale-105 transition-all duration-200 ease-linear" : "bg-zinc-100 text-black"}`}>
-             {item}
+            className={`py-[0.5vw] cursor-pointer border-b-[1px] border-black px-[2vw] font-medium ${type===item.name ? "bg-amber-500 text-white scale-105 transition-all duration-200 ease-linear" : "bg-zinc-100 text-black"}`}>
+             {item.name}
          </div>
         ))} 
     </div>
