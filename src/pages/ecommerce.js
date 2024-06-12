@@ -46,7 +46,9 @@ function Ecommerce() {
 
     getProductType()
     getAllProduct()
-  },[])
+
+
+  },[allProducts])
 
 
 

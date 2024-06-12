@@ -42,6 +42,7 @@ const UploadProductForm = ({onClose,productTypeData}) => {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
+
     });
 
     } catch (error) {
