@@ -5,6 +5,7 @@ import axios from 'axios'
 import ProductCard from '../components/Ecommerce/ProductCard';
 import UpdateProductForm from '../components/Ecommerce/UpdateForm';
 import UploadProductForm from '../components/Ecommerce/UploadProductForm';
+import AddCategoryForm from '../components/Ecommerce/AddCategoryForm';
 
 
 function Ecommerce() {
@@ -15,6 +16,7 @@ function Ecommerce() {
   const [updateProductForm,setUpdateProductForm]=useState(false)
   const [selectedItem, setSelectedItem] = useState(null);
   const [updateItem,setUpdateItem]=useState()
+  const [addCategoryForm,setAddCategoryForm]=useState(false)
   const [type,setType]=useState("FPV Goggles")
   
   useEffect(()=>{
@@ -34,6 +36,7 @@ function Ecommerce() {
 
     getAllProduct()
   },[])
+
 
   useEffect(()=>{
     const getProductType = async () => {
@@ -76,9 +79,16 @@ function Ecommerce() {
     setSelectedItem(null);
   };
 
+  const handleCategoryForm = () => {
+    setAddCategoryForm(false);
+  };
+
   return (
     <div className="flex flex-row ">
     <div className='w-[30vw] text-[2.5vw] sm:text-[1.75vw] md:text-[1.5vw] lg:text-[1.25vw] sm:w-[15vw] border-r-[1px] h-[100vh] border-black flex flex-col items-center'>
+        <div className="bg-black text-white text-xl tracking-wider font-semibold py-[0.75vw] px-[2vw] focus:outline-none w-full focus:shadow-outline">
+            Category
+        </div>
         <div className='w-full'>
          {productType?.map((item,key)=>(
             <div 
@@ -89,11 +99,19 @@ function Ecommerce() {
          </div>
         ))} 
     </div>
+
         <button
         onClick={()=>handleUploadForm()}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-[0.75vw] px-[2vw] rounded focus:outline-none mt-[2vw] w-fit focus:shadow-outline"
-            type="submit">
+            className="bg-blue-500 hover:bg-blue-700 text-sm text-white font-bold py-[0.75vw] px-[2vw] rounded focus:outline-none mt-[2vw] w-fit focus:shadow-outline"
+            >
             Upload Product
+        </button>
+
+        <button
+        onClick={()=>setAddCategoryForm(true)}
+            className="bg-red-500 hover:bg-red-700 text-sm text-white font-bold py-[0.75vw] px-[2vw] rounded focus:outline-none mt-[0.5vw] w-fit focus:shadow-outline"
+            >
+            Add Category
         </button>
         </div>
      
@@ -121,6 +139,12 @@ function Ecommerce() {
     {updateProductForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <UpdateProductForm updateItem={updateItem} onClose={handleUpdateForm} productTypeData={productType} />
+        </div>
+      )}
+
+    {addCategoryForm && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <AddCategoryForm  onClose={handleCategoryForm} productTypeData={productType} />
         </div>
       )}
      
