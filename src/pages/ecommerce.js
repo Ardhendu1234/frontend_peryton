@@ -98,7 +98,6 @@ function Ecommerce() {
         {allProducts.filter((product)=>product.productType===type).map((item,key)=>(
             <div key={key}>
  <ProductCard item={item}  handleButtonClick={handleButtonClick} setUpdateItem={setUpdateItem} setUpdateProductForm={setUpdateProductForm}/>
-
             </div>
             
         ))}
@@ -117,7 +116,7 @@ function Ecommerce() {
 
     {updateProductForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <UpdateProductForm updateItem={updateItem} onClose={handleUpdateForm} />
+          <UpdateProductForm updateItem={updateItem} onClose={handleUpdateForm} productTypeData={productType} />
         </div>
       )}
      

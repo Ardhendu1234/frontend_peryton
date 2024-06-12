@@ -4,7 +4,6 @@ import { ECOMM_URL } from "../../constants/apiCalls";
 
 const ProductCard = ({
   item,
-  
   handleButtonClick,
   setUpdateItem,
   setUpdateProductForm,

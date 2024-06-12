@@ -1,28 +1,48 @@
 import React, { useState } from 'react';
+import { ECOMM_URL } from '../../constants/apiCalls';
+import axios  from 'axios'
 
-const UpdateProductForm = ({ updateItem,onClose }) => {
+const UpdateProductForm = ({ updateItem,onClose,productTypeData }) => {
   const [name, setName] = useState(updateItem.name);
   const [description, setDescription] = useState(updateItem.description);
   const [price, setPrice] = useState(updateItem.price);
   const [productType, setProductType] = useState(updateItem.productType);
   const [stock, setStock] = useState(updateItem.stock);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission, e.g., send data to the server
-    console.log({
-      name,
-      description,
-      price,
-      productType,
-      stock,
+  const handleSubmit =async (id) => {
+    try {
+      
+      console.log( 
+        id,
+        name,
+        description,
+        price,
+        productType,
+        stock,
+      )
+
+      const res = await axios.post(`${ECOMM_URL}/updateProduct`, {
+        _id:id,
+        name,
+        description,
+        price,
+        productType,
+        stock,
+      }, {
+      headers: {
+        'Accept': 'application/json'
+      },
     });
+
+    } catch (error) {
+      console.log("there is error while sending request")
+    }
   };
 
   return (
     <div className="max-w-md mx-auto">
       <h2 className="text-2xl font-bold mb-4 text-center">Update Product</h2>
-      <form onSubmit={handleSubmit} className="bg-white  rounded px-8 pt-6 pb-8 mb-4">
+      <form  className="bg-white  rounded px-8 pt-6 pb-8 mb-4">
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="name">
             Name
@@ -57,10 +77,10 @@ const UpdateProductForm = ({ updateItem,onClose }) => {
           <input
             className=" border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="price"
-            type="number"
+            type="text"
             placeholder="Price"
             value={price}
-            onChange={(e) => setPrice(Number(e.target.value))}
+            onChange={(e) => setPrice(e.target.value)}
             required
           />
         </div>
@@ -76,16 +96,9 @@ const UpdateProductForm = ({ updateItem,onClose }) => {
             required
           >
             <option value="">Select Product Type</option>
-            <option value="FPV Goggles">FPV Goggles</option>
-            <option value="Frames">Frames</option>
-            <option value="Light Controllers">Light Controllers</option>
-            <option value="Receivers">Receivers</option>
-            <option value="Transmitters">Transmitters</option>
-            <option value="VTX">VTX</option>
-            <option value="Cameras">Cameras</option>
-            <option value="Antennas">Antennas</option>
-            <option value="Propellers">Propellers</option>
-            <option value="Motors">Motors</option>
+            {productTypeData?.map((item,key)=>(
+              <option key={key} value={item}>{item}</option>
+            ))}
           </select>
         </div>
         <div className="mb-4">
@@ -95,19 +108,19 @@ const UpdateProductForm = ({ updateItem,onClose }) => {
           <input
             className=" border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="stock"
-            type="number"
+            type="text"
             placeholder="Stock"
             value={stock}
-            onChange={(e) => setStock(Number(e.target.value))}
+            onChange={(e) => setStock(e.target.value)}
             required
           />
         </div>
         <div className="flex items-center justify-between">
           <button
+          onClick={()=>handleSubmit(updateItem._id)}
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit"
           >
-            Update Product
+            Update 
           </button>
           <button
           type="button"
