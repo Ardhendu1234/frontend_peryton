@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Ecomdata } from '../constants/Ecomdata';
 import ContactForm from '../components/ContactForm';
-import { getProductType } from '../constants/apiCalls';
-import Sidebar from '../components/Ecommerce/Sidebar';
 import { ECOMM_URL } from '../constants/apiCalls';
 import axios from 'axios'
+import ProductCard from '../components/Ecommerce/ProductCard';
 
 
 function Ecommerce() {
@@ -49,6 +46,9 @@ function Ecommerce() {
 
   const [selectedItem, setSelectedItem] = useState(null);
 
+  const handleClick=(item)=>{
+    setType(item)
+  }
   const handleButtonClick = (item) => {
     setSelectedItem(item);
   };
@@ -59,52 +59,20 @@ function Ecommerce() {
 
   return (
     <div className="flex flex-row ">
-      <div className='w-[15vw] border-r-[1px] h-[100vh] border-black bg-yellow-200'>
+      <div className='w-[15vw] border-r-[1px] h-[100vh] border-black'>
          {productType?.map((item,key)=>(
             <div 
-            onClick={()=>setType(item)}
+            onClick={()=>handleClick(item)}
             key={key} 
-            className='py-[0.75vw] cursor-pointer border-b-[1px] border-black px-[2vw] font-medium'>
+            className={`py-[0.75vw] cursor-pointer border-b-[1px] border-black px-[2vw] font-medium ${type===item ? "bg-amber-500 text-white scale-105 transition-all duration-200 ease-linear" : "bg-zinc-100 text-black"}`}>
              {item}
          </div>
         ))} 
     </div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 bg-zinc-700 w-[85vw] p-[1vw]">
+    <div className="flex p-[1vw] flex-wrap justify-center md:justify-start items-center gap-[2vw] bg-zinc-700 w-[85vw]">
         {allProducts.filter((product)=>product.productType===type).map((item,key)=>(
-             <div key={key} class="container page-wrapper">
-             <div class="page-inner">
-               <div class="row">
-                 <div class="el-wrapper">
-                   <div class="box-up">
-                     <img class="img" src={item.imageUrls} alt=""/>
-                     <div class="img-info">
-                       <div class="info-inner">
-                         <span class="p-name">{item.name}</span>
-                         {/* <span class="p-company">Yeezy</span> */}
-                       </div>
-                       <div class="a-size">Stock : <span class="size">{item.stock}</span></div>
-                     </div>
-                   </div>
-           
-                   <div class="box-down">
-                     <div class="h-bg">
-                       <div class="h-bg-inner"></div>
-                     </div>
-           
-                     <a 
-                    onClick={() => handleButtonClick(item.name)}
-                     class="cart" href="#">
-                       <span className="price ">${item.price}</span>
-                       <span class="add-to-cart">
-                         <span class="txt">Buy Now</span>
-                       </span>
-                     </a>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
+             <ProductCard item={item} key={key} handleButtonClick={handleButtonClick}/>
         ))}
     </div>
     {selectedItem && (

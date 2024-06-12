@@ -57,33 +57,13 @@ body {
 
 .page-wrapper {
   height: fit-content;
-  display: table;
 }
 
-.page-wrapper .page-inner {
-  display: table-cell;
-  vertical-align: middle;
-}
 
 .el-wrapper {
-  width: 360px;
-  padding: 15px;
-  margin: 15px auto;
   background-color: #fff;
 }
 
-@media (max-width: 991px) {
-  .el-wrapper {
-    width: 345px;
-  }
-}
-
-@media (max-width: 767px) {
-  .el-wrapper {
-    width: 290px;
-    margin: 30px auto;
-  }
-}
 
 .el-wrapper:hover .h-bg {
   left: 0px;
