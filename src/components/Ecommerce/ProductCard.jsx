@@ -1,11 +1,11 @@
 import React from 'react'
 
-const ProductCard = ({item,key ,handleButtonClick}) => {
+const ProductCard = ({item,key ,handleButtonClick,setUpdateItem}) => {
   return (
-    <div key={key} className="container page-wrapper w-[75%] sm:w-[40vw] lg:w-[26vw] xl:w-[19vw]">
-             <div class="page-inner">
-               <div class="row">
-                 <div class=" w-[100%] bg-white el-wrapper">
+    <div key={key} className="container page-wrapper  w-[85%] sm:w-[40vw] lg:w-[26vw] xl:w-[19vw]">
+             <div class="page-inner ">
+               <div class="row ">
+                 <div class=" w-[100%]  bg-white el-wrapper">
                    <div class="box-up">
                      <img class="img" src={item.imageUrls} alt=""/>
                      <div class="img-info">
@@ -30,10 +30,20 @@ const ProductCard = ({item,key ,handleButtonClick}) => {
                          <span class="txt">Buy Now</span>
                        </span>
                      </a>
+                     
                    </div>
+                   
                  </div>
+                 <button
+        onClick={()=>setUpdateItem(item)}
+            className="bg-blue-500 hover:bg-blue-700 text-[2vw] md:text-[1vw] text-white font-bold py-[0.5vw] px-[1vw] rounded focus:outline-none mt-[0.5vw] w-fit focus:shadow-outline"
+            type="submit">
+            Update
+        </button>
                </div>
+               
              </div>
+             
            </div>
   )
 }

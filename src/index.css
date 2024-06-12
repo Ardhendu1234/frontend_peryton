@@ -249,7 +249,8 @@ body {
   font-size: 16px;
   color: #252525;
 }
-.cart:hover .price {
+
+.el-wrapper:hover .price {
     color: white; /* Change color to white on hover */
   }
 

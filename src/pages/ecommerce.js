@@ -3,12 +3,18 @@ import ContactForm from '../components/ContactForm';
 import { ECOMM_URL } from '../constants/apiCalls';
 import axios from 'axios'
 import ProductCard from '../components/Ecommerce/ProductCard';
+import UpdateProductForm from '../components/Ecommerce/UpdateForm';
+import UploadProductForm from '../components/Ecommerce/UploadProductForm';
 
 
 function Ecommerce() {
 
   const [productType,setProductType]=useState([])
   const [allProducts,setAllProducts]=useState([])
+  const [uploadProductForm,setUploadProductForm]=useState(true)
+  const [updateProductForm,setUpdateProductForm]=useState(false)
+  const [selectedItem, setSelectedItem] = useState(null);
+  const [updateItem,setUpdateItem]=useState()
   const [type,setType]=useState("HEllo")
   
   useEffect(()=>{
@@ -44,13 +50,22 @@ function Ecommerce() {
 
 
 
-  const [selectedItem, setSelectedItem] = useState(null);
+  
 
   const handleClick=(item)=>{
     setType(item)
   }
+
   const handleButtonClick = (item) => {
     setSelectedItem(item);
+  };
+
+  const handleUploadForm = () => {
+    setUploadProductForm(!uploadProductForm);
+  };
+
+  const handleUpdateForm = () => {
+    setUpdateProductForm(!updateProductForm);
   };
 
   const handleCloseForm = () => {
@@ -59,25 +74,46 @@ function Ecommerce() {
 
   return (
     <div className="flex flex-row ">
-      <div className='w-[15vw] border-r-[1px] h-[100vh] border-black'>
+    <div className='w-[30vw] text-[2.5vw] sm:text-[1.75vw] md:text-[1.5vw] lg:text-[1.25vw] sm:w-[15vw] border-r-[1px] h-[100vh] border-black flex flex-col items-center'>
+        <div className='w-full'>
          {productType?.map((item,key)=>(
             <div 
             onClick={()=>handleClick(item)}
             key={key} 
-            className={`py-[0.75vw] cursor-pointer border-b-[1px] border-black px-[2vw] font-medium ${type===item ? "bg-amber-500 text-white scale-105 transition-all duration-200 ease-linear" : "bg-zinc-100 text-black"}`}>
+            className={`py-[0.5vw] cursor-pointer border-b-[1px] border-black px-[2vw] font-medium ${type===item ? "bg-amber-500 text-white scale-105 transition-all duration-200 ease-linear" : "bg-zinc-100 text-black"}`}>
              {item}
          </div>
         ))} 
     </div>
+        <button
+        onClick={()=>handleUploadForm()}
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-[0.75vw] px-[2vw] rounded focus:outline-none mt-[2vw] w-fit focus:shadow-outline"
+            type="submit">
+            Upload Product
+        </button>
+        </div>
+     
 
-    <div className="flex p-[1vw] flex-wrap justify-center md:justify-start items-center gap-[2vw] bg-zinc-700 w-[85vw]">
+    <div className="flex p-[1vw] flex-wrap justify-center md:justify-start items-center gap-[2vw] bg-zinc-700 w-[70vw] sm:w-[85vw] pl-[1.5vw]">
         {allProducts.filter((product)=>product.productType===type).map((item,key)=>(
-             <ProductCard item={item} key={key} handleButtonClick={handleButtonClick}/>
+             <ProductCard item={item} key={key} handleButtonClick={handleButtonClick} setUpdateItem={setUpdateItem}/>
         ))}
     </div>
     {selectedItem && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <ContactForm item={selectedItem} onClose={handleCloseForm} />
+        </div>
+      )}
+
+    {uploadProductForm && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <UploadProductForm item={selectedItem} onClose={handleUploadForm} productTypeData={productType} />
+        </div>
+      )}
+
+    {updateProductForm && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <UpdateProductForm item={selectedItem} onClose={handleUpdateForm} />
         </div>
       )}
      
