@@ -55,7 +55,17 @@ function Ecommerce() {
     getProductType()
   },[])
 
-
+const deleteCategory=async(id)=>{
+    try {
+        console.log(id)
+        const res=await axios.delete(`${Category_url}/deleteCategory?_id=${id}`)
+      if(res){
+        window.location.reload();
+      }
+      } catch (error) {
+        console.log(error,"not able to delte the product")
+      }
+}
 
   
 
@@ -85,7 +95,7 @@ function Ecommerce() {
 
   return (
     <div className="flex flex-row ">
-    <div className='w-[30vw] text-[2.5vw] sm:text-[1.75vw] md:text-[1.5vw] lg:text-[1.25vw] sm:w-[15vw] border-r-[1px] h-[100vh] border-black flex flex-col items-center'>
+    <div className='w-[30vw] overflow-scroll text-[2.5vw] sm:text-[1.75vw] md:text-[1.5vw] lg:text-[1.25vw] sm:w-[15vw] border-r-[1px] h-[100vh] border-black flex flex-col items-center'>
         <div className="bg-black text-white text-xl tracking-wider font-semibold py-[0.75vw] px-[2vw] focus:outline-none w-full focus:shadow-outline">
             Category
         </div>
@@ -94,8 +104,16 @@ function Ecommerce() {
             <div 
             onClick={()=>handleClick(item.name)}
             key={key} 
-            className={`py-[0.5vw] cursor-pointer border-b-[1px] border-black px-[2vw] font-medium ${type===item.name ? "bg-amber-500 text-white scale-105 transition-all duration-200 ease-linear" : "bg-zinc-100 text-black"}`}>
-             {item.name}
+            className={`py-[0.5vw] cursor-pointer border-b-[1px] border-black px-[1vw] font-medium ${type===item.name ? "bg-amber-500 text-white scale-105 transition-all duration-200 ease-linear" : "bg-zinc-100 text-black"}`}>
+                <div className='flex flex-row justify-between '>
+                <div> {item.name}</div>
+                <button 
+                onClick={()=>deleteCategory(item._id)}
+                className='rotate-90 rounded bg-red-500 text-white hover:bg-red-700'>
+                    X
+                </button>
+                </div>
+            
          </div>
         ))} 
     </div>
