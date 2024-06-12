@@ -4,7 +4,7 @@ import { ECOMM_URL } from "../../constants/apiCalls";
 
 const ProductCard = ({
   item,
-  key,
+  
   handleButtonClick,
   setUpdateItem,
   setUpdateProductForm,
@@ -23,38 +23,38 @@ const ProductCard = ({
   }
   return (
     <div
-      key={key}
+      
       className="container page-wrapper  w-[85%] sm:w-[40vw] lg:w-[26vw] xl:w-[19vw]"
     >
-      <div class="page-inner ">
-        <div class="row ">
-          <div class=" w-[100%]  bg-white el-wrapper">
-            <div class="box-up">
-              <img class="img" src={item.imageUrls} alt="" />
-              <div class="img-info">
-                <div class="info-inner">
-                  <span class="p-name">{item.name}</span>
-                  {/* <span class="p-company">Yeezy</span> */}
+      <div className="page-inner ">
+        <div className="row ">
+          <div className=" w-[100%]  bg-white el-wrapper">
+            <div className="box-up">
+              <img className="img" src={item.imageUrls} alt="" />
+              <div className="img-info">
+                <div className="info-inner">
+                  <span className="p-name">{item.name}</span>
+                  {/* <span className="p-company">Yeezy</span> */}
                 </div>
-                <div class="a-size">
-                  Stock : <span class="size">{item.stock}</span>
+                <div className="a-size">
+                  Stock : <span className="size">{item.stock}</span>
                 </div>
               </div>
             </div>
 
-            <div class="box-down">
-              <div class="h-bg">
-                <div class="h-bg-inner"></div>
+            <div className="box-down">
+              <div className="h-bg">
+                <div className="h-bg-inner"></div>
               </div>
 
               <a
                 onClick={() => handleButtonClick(item.name)}
-                class="cart"
+                className="cart"
                 href="#"
               >
                 <span className="price ">${item.price}</span>
-                <span class="add-to-cart">
-                  <span class="txt">Buy Now</span>
+                <span className="add-to-cart">
+                  <span className="txt">Buy Now</span>
                 </span>
               </a>
             </div>

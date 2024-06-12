@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import axios from 'axios'
+import { ECOMM_URL } from '../../constants/apiCalls';
 
 const UploadProductForm = ({onClose,productTypeData}) => {
   const [name, setName] = useState('');
@@ -8,29 +10,54 @@ const UploadProductForm = ({onClose,productTypeData}) => {
   const [imageFile, setImageFile] = useState(null);
   const [stock, setStock] = useState(0);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission, including image file upload
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('description', description);
-    formData.append('price', price);
-    formData.append('productType', productType);
-    formData.append('imageFile', imageFile);
-    formData.append('stock', stock);
+  const handleSubmit =async () => {
+    try {
+      // const res=await axios.post(`${ECOMM_URL}/addProduct`,{
+      //   name,
+      //   description,
+      //   price,
+      //   productType,
+      //   stock,
+      //   imageUrls:imageFile
+      // },{
+      //   headers: {
+      //     'Content-Type': 'application/json', // Set the appropriate Content-Type header
+      //   }) 
+      console.log( name,
+        description,
+        price,
+        productType,
+        stock,
+        imageFile
+      )
 
-    // Send the form data to the server using an API call or other means
-    console.log(formData);
+      const res = await axios.post(`${ECOMM_URL}/addProduct`, {
+        name,
+        description,
+        price,
+        productType,
+        stock,
+        imageUrls:imageFile
+      }, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+
+    } catch (error) {
+      console.log("there is error while sending request")
+    }
   };
 
   const handleImageChange = (e) => {
     setImageFile(e.target.files[0]);
+    console.log(e.target.files[0])
   };
 
   return (
     <div className="max-w-md mx-auto bg-white h-fit ">
       <h2 className="text-2xl font-bold mb-4 text-center">Upload Product</h2>
-      <form onSubmit={handleSubmit} className="bg-white rounded px-8 pt-6 pb-8 mb-4">
+      <form  className="bg-white rounded px-8 pt-6 pb-8 mb-4">
         <div className="mb-4">
           <label className="block text-gray-700 font-bold mb-2" htmlFor="name">
             Name
@@ -119,8 +146,8 @@ const UploadProductForm = ({onClose,productTypeData}) => {
         </div>
         <div className="flex items-center justify-between">
           <button
+          onClick={()=>handleSubmit()}
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            type="submit"
           >
             Upload Product
           </button>
