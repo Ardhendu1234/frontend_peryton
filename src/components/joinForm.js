@@ -22,13 +22,13 @@ function JoinForm({ onClose }) {
 
       try {
         
-        await emailjs.send(
-          'service_ucsg2u9',    
-          'template_xh0javp',   
-          formData,
-          'LsNle7uL7XcsY8ntV'        
-        );
-        alert('Email sent successfully');
+        // await emailjs.send(
+        //   'service_ucsg2u9',    
+        //   'template_xh0javp',   
+        //   formData,
+        //   'LsNle7uL7XcsY8ntV'        
+        // );
+        // alert('Email sent successfully');
         onClose()
 
     } catch (error) {

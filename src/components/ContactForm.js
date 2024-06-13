@@ -23,14 +23,14 @@ function ContactForm({ item, onClose }) {
 
       try {
         
-        await emailjs.send(
-          'service_ucsg2u9',    
-          'template_xh0javp',   
-          formData,
-          'LsNle7uL7XcsY8ntV'        
-        );
-        alert('Email sent successfully');
-        onClose()
+        // await emailjs.send(
+        //   'service_ucsg2u9',    
+        //   'template_xh0javp',   
+        //   formData,
+        //   'LsNle7uL7XcsY8ntV'        
+        // );
+        // alert('Email sent successfully');
+        // onClose()
 
     } catch (error) {
       console.error('Error sending email:', error);

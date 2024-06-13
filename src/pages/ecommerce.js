@@ -6,6 +6,7 @@ import ProductCard from '../components/Ecommerce/ProductCard';
 import UpdateProductForm from '../components/Ecommerce/UpdateForm';
 import UploadProductForm from '../components/Ecommerce/UploadProductForm';
 import AddCategoryForm from '../components/Ecommerce/AddCategoryForm';
+import { MdOutlineCancel } from "react-icons/md";
 
 
 function Ecommerce() {
@@ -94,23 +95,23 @@ const deleteCategory=async(id)=>{
   };
 
   return (
-    <div className="flex flex-row ">
-    <div className='w-[30vw] overflow-scroll text-[2.5vw] sm:text-[1.75vw] md:text-[1.5vw] lg:text-[1.25vw] sm:w-[15vw] border-r-[1px] h-[100vh] border-black flex flex-col items-center'>
+    <div className="flex flex-row h-[100vh]">
+    <div className='w-[30vw] h-[100%] text-[2.5vw] sm:text-[1.75vw] md:text-[1.5vw] lg:text-[1.25vw] sm:w-[15vw] border-r-[1px] border-black flex flex-col items-center'>
         <div className="bg-black text-white text-xl tracking-wider font-semibold py-[0.75vw] px-[2vw] focus:outline-none w-full focus:shadow-outline">
             Category
         </div>
-        <div className='w-full'>
+        <div className='w-full overflow-y-scroll max-h-[60%]'>
          {productType?.map((item,key)=>(
             <div 
             onClick={()=>handleClick(item.name)}
             key={key} 
-            className={`py-[0.5vw] cursor-pointer border-b-[1px] border-black px-[1vw] font-medium ${type===item.name ? "bg-amber-500 text-white scale-105 transition-all duration-200 ease-linear" : "bg-zinc-100 text-black"}`}>
+            className={`py-[0.65vw] cursor-pointer border-b-[1px] border-black px-[1vw] font-medium ${type===item.name ? "bg-amber-500 text-white scale-105 transition-all duration-200 ease-linear" : "bg-zinc-100 text-black"}`}>
                 <div className='flex flex-row justify-between '>
                 <div> {item.name}</div>
                 <button 
                 onClick={()=>deleteCategory(item._id)}
-                className='rotate-90 rounded bg-red-500 text-white hover:bg-red-700'>
-                    X
+                className='   text-red-500 hover:text-red-700'>
+                   <MdOutlineCancel />
                 </button>
                 </div>
             
