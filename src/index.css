@@ -22,6 +22,13 @@ background: radial-gradient(radial, rgb(5, 204, 88) 0%, rgba(235, 14, 40, 0) 100
   .aspect_ratio {
     aspect-ratio: 2 / 3; /* Aspect ratio: 16:9 */
   }
+  .aspect_ratio_service {
+    aspect-ratio: 6 / 4;
+    object-fit:fill;
+     /* Aspect ratio: 16:9 */
+  }
+
+
 
 
   body,

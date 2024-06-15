@@ -66,7 +66,7 @@ const Glassy = ({ icon, name, subtitle, servicePage, handleClick, itemName }) =>
         justifyContent: "center",
         alignItems: "center",
       }}
-      className="md:w-[28vw] h-fit w-[55vw]  rounded-2xl flex justify-center items-center"
+      className="md:w-[28vw] h-fit w-[55vw] rounded-2xl flex justify-center items-center"
     >
       {/* Gradient clipped by parent using clip-path */}
       {cursor && (
@@ -93,8 +93,8 @@ const Glassy = ({ icon, name, subtitle, servicePage, handleClick, itemName }) =>
         }`}
       >
         {!servicePage && <div>{icon}</div>}
-        {servicePage && <img src={icon} className="w-[100%] rounded-2xl" />}
-        <div className={`${servicePage ? "ml-[2vw]" : ""}`}>{name}</div>
+        {servicePage && <img src={icon} className="w-[100%] aspect_ratio_service rounded-2xl" />}
+        <div className={`${servicePage ? "ml-[2vw] mt-[1vw]" : ""}`}>{name}</div>
         {subtitle && (
           <div className="text-[2vw] md:text-[1.3vw]">{subtitle}</div>
         )}

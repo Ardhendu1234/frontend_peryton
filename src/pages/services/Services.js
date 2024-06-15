@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { services } from "../../constants/data";
 import { Link, useNavigate } from "react-router-dom";
 import useBreadcrumbs from "use-react-router-breadcrumbs";
@@ -6,12 +6,31 @@ import StyledHeading from "../../components/styledHeading";
 import BreadCrumbBar from "../../components/breadCrumbBar";
 import Glassy from "../../components/Glassy";
 import ServiceForm from "../../components/serviceForm";
+import axios from 'axios'
+import { service_url } from "../../constants/apiCalls";
 
 const Services = () => {
   const navigate = useNavigate();
   const breadCrumbs = useBreadcrumbs();
   const [selectedItem ,setSelectedItem]=useState("")
   const [active ,setActive]=useState(false)
+  const [allServices, setAllServices] = useState([])
+
+  useEffect(()=>{
+
+    const getAllService = async () => {
+        try {
+          const res = await axios.get(`${service_url}/getAllServices`);
+            const data=res.data.data
+            console.log(data)
+            setAllServices(data)
+        } catch (error) {
+          console.error('Error while fetching Service types:', error);
+        }
+    };
+
+    getAllService()
+  },[])
 
   const itemName=(name)=>{
     console.log(name)
@@ -29,9 +48,9 @@ const Services = () => {
       <StyledHeading bg_text="Services" fg_text="Services" />
 
       <div className="flex md:flex-row flex-col flex-wrap justify-center gap-10 pt-[5vw] items-center rounded-md shadow-md">
-          {services.map((item,index) => (
+          {allServices?.map((item,index) => (
             <div key={index} >
-              <Glassy icon={item.icon} name={item.title} servicePage={true}
+              <Glassy icon={item.imageUrls} name={item.name} servicePage={true}
               handleClick={handleCloseForm} itemName={itemName}/> 
               </div>
           ))}

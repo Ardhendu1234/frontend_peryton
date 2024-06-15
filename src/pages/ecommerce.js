@@ -7,6 +7,7 @@ import UpdateProductForm from '../components/Ecommerce/UpdateForm';
 import UploadProductForm from '../components/Ecommerce/UploadProductForm';
 import AddCategoryForm from '../components/Ecommerce/AddCategoryForm';
 import { MdOutlineCancel } from "react-icons/md";
+import AddServiceForm from '../components/Service/AddServiceForm';
 
 
 function Ecommerce() {
@@ -15,6 +16,7 @@ function Ecommerce() {
   const [allProducts,setAllProducts]=useState([])
   const [uploadProductForm,setUploadProductForm]=useState(false)
   const [updateProductForm,setUpdateProductForm]=useState(false)
+  const [addServiceForm,setAddServiceForm]=useState(false)
   const [selectedItem, setSelectedItem] = useState(null);
   const [updateItem,setUpdateItem]=useState()
   const [addCategoryForm,setAddCategoryForm]=useState(false)
@@ -94,13 +96,18 @@ const deleteCategory=async(id)=>{
     setAddCategoryForm(false);
   };
 
+  const handleAddServiceForm = () => {
+    setAddServiceForm(false);
+  };
+
+
   return (
     <div className="flex flex-row h-[100vh]">
     <div className='w-[30vw] h-[100%] text-[2.5vw] sm:text-[1.75vw] md:text-[1.5vw] lg:text-[1.25vw] sm:w-[15vw] border-r-[1px] border-black flex flex-col items-center'>
         <div className="bg-black text-white text-xl tracking-wider font-semibold py-[0.75vw] px-[2vw] focus:outline-none w-full focus:shadow-outline">
             Category
         </div>
-        <div className='w-full overflow-y-scroll max-h-[60%]'>
+        <div className='w-full overflow-y-scroll max-h-[55%]'>
          {productType?.map((item,key)=>(
             <div 
             onClick={()=>handleClick(item.name)}
@@ -131,6 +138,13 @@ const deleteCategory=async(id)=>{
             className="bg-red-500 hover:bg-red-700 text-sm text-white font-bold py-[0.75vw] px-[2vw] rounded focus:outline-none mt-[0.5vw] w-fit focus:shadow-outline"
             >
             Add Category
+        </button>
+
+        <button
+        onClick={()=>setAddServiceForm(true)}
+            className="bg-red-500 hover:bg-red-700 text-sm text-white font-bold py-[0.75vw] px-[2vw] rounded focus:outline-none mt-[0.5vw] w-fit focus:shadow-outline"
+            >
+            Add Service
         </button>
         </div>
      
@@ -164,6 +178,12 @@ const deleteCategory=async(id)=>{
     {addCategoryForm && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <AddCategoryForm  onClose={handleCategoryForm} productTypeData={productType} />
+        </div>
+      )}
+
+    {addServiceForm && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <AddServiceForm  onClose={handleAddServiceForm}  />
         </div>
       )}
      
