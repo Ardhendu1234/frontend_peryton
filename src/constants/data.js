@@ -50,6 +50,16 @@ export const services = [
     title: "3D Mapping",
   },
   {
+    id: 5,
+    icon: "imgs/3dmapping.webp",
+    title: "3D Mapping",
+  },
+  {
+    id: 4,
+    icon: "imgs/3dmapping.webp",
+    title: "3D Mapping",
+  },
+  {
     id: 2,
     // icon: <IoFlower />,
     icon: "imgs/3dmapping.webp",

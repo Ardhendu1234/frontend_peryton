@@ -105,12 +105,12 @@ const deleteCategory=async(id)=>{
             <div 
             onClick={()=>handleClick(item.name)}
             key={key} 
-            className={`py-[0.65vw] cursor-pointer border-b-[1px] border-black px-[1vw] font-medium ${type===item.name ? "bg-amber-500 text-white scale-105 transition-all duration-200 ease-linear" : "bg-zinc-100 text-black"}`}>
+            className={`py-[0.65vw] cursor-pointer border-b-[1px] border-black px-[1vw] font-medium ${type===item.name ? "bg-cyan-500 text-white scale-105 transition-all duration-200 ease-linear" : "bg-zinc-100 text-black"}`}>
                 <div className='flex flex-row justify-between '>
                 <div> {item.name}</div>
                 <button 
                 onClick={()=>deleteCategory(item._id)}
-                className='   text-red-500 hover:text-red-700'>
+                className='text-red-500 hover:text-red-700'>
                    <MdOutlineCancel />
                 </button>
                 </div>

@@ -6,8 +6,8 @@ const AddCategoryForm = ({onClose}) => {
   const [name, setName] = useState('');
 
   const handleSubmit =async () => {
+    
     try {
-      console.log(name)
       const res = await axios.post(`${Category_url}/addCategory`, {name}, {
       headers: {
         Accept: "application/json",

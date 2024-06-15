@@ -66,7 +66,7 @@ const Glassy = ({ icon, name, subtitle, servicePage, handleClick, itemName }) =>
         justifyContent: "center",
         alignItems: "center",
       }}
-      className="md:w-[28vw] md:h-[25vw] w-[55vw] h-[32vw] rounded-2xl flex justify-center items-center"
+      className="md:w-[28vw] h-fit w-[55vw]  rounded-2xl flex justify-center items-center"
     >
       {/* Gradient clipped by parent using clip-path */}
       {cursor && (
@@ -79,7 +79,7 @@ const Glassy = ({ icon, name, subtitle, servicePage, handleClick, itemName }) =>
       )}
       <div
         ref={cursorRef}
-        className={`cursor ${cursor ? "opacity-100" : "opacity-0"}`}
+        className={ ` cursor ${cursor ? "opacity-100" : "opacity-0"}`}
       />
       <div
         onMouseEnter={toggle}
@@ -88,12 +88,12 @@ const Glassy = ({ icon, name, subtitle, servicePage, handleClick, itemName }) =>
         style={{ clipPath: "inset(0)" }}
         className={`${
           cursor ? "border-[2px] border-blue-700 " : "border-[1px] border-blue-300"
-        }  text-[4vw] md:text-[2vw] h-[100%]  cursor-pointer  bg-black bg-opacity-10 rounded-2xl  text-white flex flex-col ${
-          servicePage ? "gap-[1vw]" : "gap-[4vw] pt-[5vw] px-[4vw] w-[100%]"
+        }  text-[4vw] md:text-[2vw] h-[100%]  cursor-pointer pb-[10px]  bg-black bg-opacity-10 rounded-2xl text-white flex flex-col ${
+          servicePage ? "gap-[1vw] w-[100%] h-fit" : "gap-[4vw] pt-[5vw] px-[4vw] w-[100%]"
         }`}
       >
         {!servicePage && <div>{icon}</div>}
-        {servicePage && <img src={icon} className="w-[30vw] rounded-2xl" />}
+        {servicePage && <img src={icon} className="w-[100%] rounded-2xl" />}
         <div className={`${servicePage ? "ml-[2vw]" : ""}`}>{name}</div>
         {subtitle && (
           <div className="text-[2vw] md:text-[1.3vw]">{subtitle}</div>
@@ -104,7 +104,7 @@ const Glassy = ({ icon, name, subtitle, servicePage, handleClick, itemName }) =>
               itemName(name);
               handleClick();
             }}
-            className="px-[1vw] ml-[2vw] w-fit bg-blue-600 text-[1.5vw] py-[0.4vw] rounded-lg"
+            className="px-[1vw] ml-[2vw] w-fit bg-blue-600 text-[2.25vw] md:text-[1.5vw] py-[0.8vw] rounded-lg"
           >
             Contact
           </div>
