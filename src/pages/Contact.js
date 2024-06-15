@@ -17,7 +17,12 @@ const Contact = () => {
 
       <div className="flex md:flex-row items-center flex-col justify-center gap-10 pt-[5vw] rounded-md shadow-md">
           {ContactData.map((item,index) => {
-            return <div key={index} ><Glassy icon={item.icon} name={item.title} subtitle={item.subTitle} /> </div>;
+            return <div key={index} ><Glassy 
+            icon={item.icon} 
+            name={item.title} 
+            subtitle={item.subTitle} 
+            contactPage={true}
+            /> </div>;
           })}
         </div>
 

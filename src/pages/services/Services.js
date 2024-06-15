@@ -9,6 +9,7 @@ import ServiceForm from "../../components/serviceForm";
 import axios from 'axios'
 import { service_url } from "../../constants/apiCalls";
 
+
 const Services = () => {
   const navigate = useNavigate();
   const breadCrumbs = useBreadcrumbs();
@@ -30,7 +31,7 @@ const Services = () => {
 
   useEffect(()=>{
 
-    const getAllService = async () => {
+   const getAllService = async () => {
         try {
           const res = await axios.get(`${service_url}/getAllServices`);
             const data=res.data.data
@@ -62,8 +63,15 @@ const Services = () => {
       <div className="flex md:flex-row flex-col flex-wrap justify-center gap-10 pt-[5vw] items-center rounded-md shadow-md">
           {allServices?.map((item,index) => (
             <div key={index} >
-              <Glassy icon={item.imageUrls} name={item.name} servicePage={true}
-              handleClick={handleCloseForm} itemName={itemName} id={item._id} handleDelete={handleDelete}/> 
+              <Glassy 
+              icon={item.imageUrls} 
+              name={item.name} 
+              servicePage={true}
+              handleClick={handleCloseForm} 
+              itemName={itemName} 
+              id={item._id} 
+              handleDelete={handleDelete}
+              homePage={false}/> 
               </div>
           ))}
         </div>

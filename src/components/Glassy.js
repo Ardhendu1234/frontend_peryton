@@ -10,6 +10,8 @@ const Glassy = ({
   itemName,
   handleDelete,
   id,
+  homePage,
+  contactPage
 }) => {
   const main = useRef(null);
   const [cursor, setCursor] = useState(false);
@@ -75,7 +77,7 @@ const Glassy = ({
         justifyContent: "center",
         alignItems: "center",
       }}
-      className="md:w-[28vw] h-fit w-[55vw] rounded-2xl flex justify-center items-center"
+      className={`md:w-[28vw] ${contactPage ? "h-[25vw]" :"h-fit"}  w-[55vw] rounded-2xl flex justify-center items-center`}
     >
       {/* Gradient clipped by parent using clip-path */}
       {cursor && (
@@ -118,7 +120,7 @@ const Glassy = ({
         {subtitle && (
           <div className="text-[2vw] md:text-[1.3vw]">{subtitle}</div>
         )}
-        {servicePage && (
+        {servicePage && !homePage && (
           <div className="flex flex-row ">
             <div
               onClick={() => {

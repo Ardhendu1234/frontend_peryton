@@ -13,10 +13,33 @@ import { Tilt } from "react-tilt";
 import Glassy from "../components/Glassy";
 import Glassy2 from "../components/Glassy2";
 import Glassy3 from "../components/Glassy3";
+import { service_url } from "../constants/apiCalls";
+import axios from "axios";
 
 const Home = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [cursor, setCursor] = useState(false);
+  const [allServices, setAllServices] = useState([])
+
+  useEffect(()=>{
+
+    const getAllService = async () => {
+         try {
+           const res = await axios.get(`${service_url}/getAllServices`);
+             const data=res.data.data
+             const limitedData = data.slice(0, 3); // Take the first 3 services
+      console.log(limitedData);
+      setAllServices(limitedData);
+         } catch (error) {
+           console.error('Error while fetching Service types:', error);
+         }
+     };
+ 
+     getAllService()
+   },[])
+
+ 
+
   
 
   const main = useRef(null);
@@ -170,8 +193,8 @@ const Home = () => {
         </div>
 
         <div className="flex md:flex-row flex-col justify-center gap-6 md:gap-10 py-[2vw] rounded-md shadow-md">
-          {services.map((item,index) => {
-            return <div key={index}><Glassy icon={item.icon} name={item.title} servicePage={true}/> </div>;
+          {allServices.map((item,index) => {
+            return <div key={index}><Glassy icon={item.imageUrls} name={item.name} homePage={true} servicePage={true}/> </div>;
           })}
         </div>
 
