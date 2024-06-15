@@ -16,6 +16,18 @@ const Services = () => {
   const [active ,setActive]=useState(false)
   const [allServices, setAllServices] = useState([])
 
+  const handleDelete=async(id)=>{
+    try {
+      console.log(id)
+      const res=await axios.delete(`${service_url}/deleteService?_id=${id}`)
+    if(res){
+      window.location.reload();
+    }
+    } catch (error) {
+      console.log(error,"not able to delte the Service")
+    }
+  }
+
   useEffect(()=>{
 
     const getAllService = async () => {
@@ -51,7 +63,7 @@ const Services = () => {
           {allServices?.map((item,index) => (
             <div key={index} >
               <Glassy icon={item.imageUrls} name={item.name} servicePage={true}
-              handleClick={handleCloseForm} itemName={itemName}/> 
+              handleClick={handleCloseForm} itemName={itemName} id={item._id} handleDelete={handleDelete}/> 
               </div>
           ))}
         </div>
