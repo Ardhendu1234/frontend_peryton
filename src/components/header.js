@@ -159,6 +159,19 @@ export default function Header() {
           >
             Services
           </Link>
+
+          <Link
+            to="/ecommerce"
+            className={
+              "text-sm font-semibold leading-6 text-gray-50 pb-2 hover:border-b-2 hover:border-blue-700 " +
+              (location.pathname === "/ecommerce"
+                ? "border-b-2 border-blue-700"
+                : "")
+            }
+          >
+            Products
+          </Link>
+
           <Link
             to="/about"
             className={
@@ -170,17 +183,8 @@ export default function Header() {
           >
             About us
           </Link>
-          <Link
-            to="/ecommerce"
-            className={
-              "text-sm font-semibold leading-6 text-gray-50 pb-2 hover:border-b-2 hover:border-blue-700 " +
-              (location.pathname === "/ecommerce"
-                ? "border-b-2 border-blue-700"
-                : "")
-            }
-          >
-            Ecommerce
-          </Link>
+
+        
           <Link
             to="/contact"
             className={
@@ -321,7 +325,7 @@ export default function Header() {
                   onClick={()=>{setMobileMenuOpen(false)}}
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-50 hover:bg-gray-950"
                 >
-                  Ecommerce
+                  Products
                 </Link>
                 <Link
                   to="/contact"

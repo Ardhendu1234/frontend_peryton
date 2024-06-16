@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
-import { Link, useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import useBreadCrumbs from "use-react-router-breadcrumbs";
 import { products } from "../../constants/data";
-import StyledHeading from "../../components/styledHeading";
 import BreadCrumbBar from "../../components/breadCrumbBar";
 
 const Product = () => {

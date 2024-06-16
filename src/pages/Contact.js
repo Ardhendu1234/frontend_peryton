@@ -2,7 +2,6 @@ import React from "react";
 import { ContactData } from "../constants/data";
 import useBreadCrumbs from "use-react-router-breadcrumbs";
 import StyledHeading from "../components/styledHeading";
-import { Link } from "react-router-dom";
 import BreadCrumbBar from "../components/breadCrumbBar";
 import Glassy from "../components/Glassy";
 

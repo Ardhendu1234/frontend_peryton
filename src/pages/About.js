@@ -1,6 +1,5 @@
 import React from "react";
 import { team } from "../constants/data";
-import { Link, useNavigate } from "react-router-dom";
 import useBreadCrumbs from "use-react-router-breadcrumbs";
 import StyledHeading from "../components/styledHeading";
 import BreadCrumbBar from "../components/breadCrumbBar";

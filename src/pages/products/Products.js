@@ -1,6 +1,6 @@
 import React from "react";
 import { products } from "../../constants/data";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useBreadcrumbs from "use-react-router-breadcrumbs";
 import StyledHeading from "../../components/styledHeading";
 import BreadCrumbBar from "../../components/breadCrumbBar";

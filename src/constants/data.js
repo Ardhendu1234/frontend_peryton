@@ -1,6 +1,6 @@
-import { FaMap, FaLinkedin, FaInstagram } from "react-icons/fa";
-import { IoFlower, IoLocationSharp } from "react-icons/io5";
-import { FaWandMagicSparkles } from "react-icons/fa6";
+import { FaLinkedin, FaInstagram } from "react-icons/fa";
+import { IoLocationSharp } from "react-icons/io5";
+
 import { MdEmail } from "react-icons/md";
 import { BsTelephoneFill } from "react-icons/bs";
 

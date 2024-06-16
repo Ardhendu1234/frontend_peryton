@@ -77,7 +77,7 @@ const Glassy = ({
         justifyContent: "center",
         alignItems: "center",
       }}
-      className={`md:w-[28vw] ${contactPage ? "h-[25vw]" :"h-fit"}  w-[55vw] rounded-2xl flex justify-center items-center`}
+      className={`md:w-[28vw] ${contactPage ? " h-fit sm:h-[25vw]" :"h-fit"}  w-[55vw] rounded-2xl flex justify-center items-center`}
     >
       {/* Gradient clipped by parent using clip-path */}
       {cursor && (

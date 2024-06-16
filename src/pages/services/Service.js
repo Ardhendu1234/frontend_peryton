@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { services } from "../../constants/data";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import useBreadCrumbs from "use-react-router-breadcrumbs";
 import StyledHeading from "../../components/styledHeading";
 import BreadCrumbBar from "../../components/breadCrumbBar";

@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
-import { blogData, services } from "../../constants/data";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { blogData } from "../../constants/data";
+import { Link, useParams } from "react-router-dom";
 import useBreadCrumbs from "use-react-router-breadcrumbs";
-import StyledHeading from "../../components/styledHeading";
-import BreadCrumbBar from "../../components/breadCrumbBar";
 import "./Blog.css";
 
 const Blog = () => {

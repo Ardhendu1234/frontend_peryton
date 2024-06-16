@@ -3,12 +3,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {FaBriefcase,FaUser} from "react-icons/fa";
-import { blogData, customers, products, services } from "../constants/data";
+import { products } from "../constants/data";
 import { MdGroups } from "react-icons/md";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 import { TbDrone } from "react-icons/tb";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Tilt } from "react-tilt";
 import Glassy from "../components/Glassy";
 import Glassy2 from "../components/Glassy2";
@@ -183,12 +183,12 @@ const Home = () => {
 
         <a href="/ecommerce" className="flex justify-center align-center w-[80%] mx-auto py-8 pb-6 my-8">
           <button className="text-white bg-gray-700 px-6 py-3 rounded-[1vw] font-bold uppercase hover:bg-blue-700">
-            View All Projects
+            View All Products
           </button>
         </a>
 
 
-        <div className="flex justify-center align-center w-full mx-auto py-8 ">
+        <div className="flex justify-center align-center w-full mt-[5vw] mx-auto py-8 ">
           <h3 className="text-white text-3xl md:text-4xl font-bold">Services</h3>
         </div>
 
@@ -220,7 +220,7 @@ const Home = () => {
                 justifyContent: "center",
                 alignItems: "center",
               }}
-              className=" rounded-2xl my-[5vw] sm:my-[0vw] flex justify-center items-center"
+              className=" rounded-2xl my-[5vw] sm:my-[0vw] sm:mb-[5vw] flex justify-center items-center"
             >
               <div
                 ref={gradientRef}
@@ -280,7 +280,7 @@ const Home = () => {
 
         
 
-          <div className="sm:mt-[0] my-[10vw]">
+          <div className="sm:mt-[0] mt-[10vw]">
         <Glassy2/>
           </div>
         
