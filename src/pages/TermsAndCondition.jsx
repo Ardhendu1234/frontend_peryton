@@ -3,7 +3,7 @@ import StyledHeading from '../components/styledHeading';
 
 const TermsAndConditions = () => {
   return (
-    <div className=" mx-auto px-8 py-8 bg-zinc-950 overflow-hidden">
+    <div className=" mx-auto px-20 py-8 bg-zinc-950 overflow-hidden">
       <div className=' mx-auto'>
      <StyledHeading bg_text="T & C" fg_text="Terms & Conditions" />
       </div>

@@ -30,7 +30,7 @@ const FAQ = () => {
   ];
 
   return (
-    <div className=" px-4 py-8 bg-gray-950">
+    <div className=" px-20 py-8 bg-gray-950">
          <StyledHeading bg_text="FAQ" fg_text="FAQ" />
       <div className="space-y-4">
         {faqs.map((faq, index) => (
