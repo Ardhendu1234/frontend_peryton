@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import JoinForm from "./joinForm";
 
 const Footer = () => {
+
   const [active,SetActive]=useState(false)
 
   const handleClick=()=>{
@@ -11,9 +12,7 @@ const Footer = () => {
   }
 
   return (
-    <div
-      className="w-[100vw] py-[2vw] px-[3vw] flex flex-col bg-gray-950"
-    >
+    <div className="w-[100vw] py-[2vw] px-[3vw] flex flex-col bg-gray-950">
       <div className=" flex md:flex-row flex-col md:gap-0 gap-6">
         <div className="md:w-[60%] w-full ">
           <img src="imgs/logo.png" alt="site-logo" className="h-6 md:h-8 mb-8 md:mb-12" />
@@ -61,18 +60,30 @@ const Footer = () => {
           </div>
 
           <div className="flex gap-4 text-gray-400 mt-8">
+              <a href="https://www.facebook.com/profile.php?id=61561154193756&mibextid=ZbWKwL"     target="_blank" rel="noreferrer" >
             <div className="md:w-[4vw] md:h-[4vw] w-[40px] h-[40px] bg-gray-800 flex items-center justify-center rounded-full hover:bg-blue-700 hover:text-white">
+           
               <FaFacebook />
             </div>
+              </a>
+             
+              <a href="https://x.com/Peryton_Tech" target="_blank" rel="noreferrer">
             <div className="md:w-[4vw] md:h-[4vw] w-[40px] h-[40px] bg-gray-800 flex items-center justify-center rounded-full hover:bg-blue-700 hover:text-white">
               <FaTwitter />
             </div>
+              </a>
+
+              <a href="https://www.linkedin.com/company/peryton-technologies-llp/" target="_blank" rel="noreferrer">
             <div className="md:w-[4vw] md:h-[4vw] w-[40px] h-[40px] bg-gray-800 flex items-center justify-center rounded-full hover:bg-blue-700 hover:text-white">
               <FaLinkedin />
             </div>
+              </a>
+
+                <a href="https://www.instagram.com/peryton.tech?igsh=dmV4em56bWYyazgz" target="_blank" rel="noreferrer">
             <div className="md:w-[4vw] md:h-[4vw] w-[40px] h-[40px] bg-gray-800 flex items-center justify-center rounded-full hover:bg-blue-700 hover:text-white">
               <FaInstagram />
             </div>
+                </a>
           </div>
         </div>
 
