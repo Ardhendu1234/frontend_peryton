@@ -137,7 +137,7 @@ const Home = () => {
       </div>
 
     
-      <div className="pb-[100px] w-[100vw] bg-black relative pt-8 flex flex-col justify-center items-center px-4">
+      <div className="pb-[100px] w-[100%] bg-black relative pt-8 flex flex-col justify-center items-center px-4">
 
         <div className="flex justify-center align-center w-full mx-auto py-8 ">
           <h3 className="text-white text-3xl md:text-4xl font-bold">Products</h3>
