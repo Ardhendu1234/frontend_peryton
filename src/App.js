@@ -16,6 +16,9 @@ import BlogDate from "./pages/blogs/BlogDate";
 import Demo from "./pages/Demo";
  import Ecommerce from "./pages/ecommerce";
 import AdminLogin from "./components/AdminLogin";
+import TermsAndConditions from "./pages/TermsAndCondition";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import RefundPolicy from "./pages/RefundPolicy";
 
 const App = () => {
   return (
@@ -38,6 +41,9 @@ const App = () => {
           <Route path="contact" element={<Contact />} />
           <Route path="demo" element={<Demo/>}/>
           <Route path="adminlogin" element={<AdminLogin/>}/>
+          <Route path="termsandconditions" element={<TermsAndConditions/>}/>
+          <Route path="privacypolicy" element={<PrivacyPolicy/>}/>
+          <Route path="refundpolicy" element={<RefundPolicy/>}/>
         </Route>
       </Routes>
     </Router>

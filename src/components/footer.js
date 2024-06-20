@@ -84,13 +84,13 @@ const Footer = () => {
           © {new Date().getFullYear()} Made with ❤ by Peryton
         </div>
         <div className="flex md:gap-6 gap-2 md:order-2 order-1 md:flex-row flex-col">
-          <Link className="text-gray-400 hover:text-blue-700">
+          <Link to="/termsandconditions" className="text-gray-400 hover:text-blue-700">
             Terms & Conditions
           </Link>
-          <Link className="text-gray-400 hover:text-blue-700">
+          <Link to="/privacypolicy" className="text-gray-400 hover:text-blue-700">
             Privacy Policy
           </Link>
-          <Link className="text-gray-400 hover:text-blue-700">
+          <Link to="/refundpolicy" className="text-gray-400 hover:text-blue-700">
             Refund & Return Policy
           </Link>
         </div>
