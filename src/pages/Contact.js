@@ -26,21 +26,6 @@ const Contact = () => {
         </div>
 
 
-      {/* <div className="flex md:flex-row flex-col gap-6 justify-between w-[80%] h-auto min-w-[200px] mx-auto overflow-hidden shrink-0 rounded-md shadow-md">
-        {ContactData.map((item) => {
-          return (
-            <div className="flex flex-col items-center justify-center align-middle md:w-[380px] md:h-[380px] w-full h-full bg-gray-800 rounded-lg hover:bg-blue-700 p-12">
-              <div className="text-white text-5xl mb-10">{item.icon}</div>
-              <div className="text-white text-3xl font-bold mb-8 text-center">
-                {item.title}
-              </div>
-              <div className="text-white text-l text-center">
-                {item.subTitle}
-              </div>
-            </div>
-          );
-        })}
-      </div> */}
     </div>
   );
 };

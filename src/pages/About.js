@@ -22,7 +22,7 @@ const About = () => {
         {team.map((item) => {
           return (
             <div className="flex flex-col items-center justify-center rounded-lg">
-              <div className=" w-[35vw] h-[40vw] md:w-[18vw] md:h-[20vw]">
+              <div className=" w-[35vw] h-[40vw] md:w-[17vw] md:h-[22vw]">
               <img
                 src={item.image}
                 alt={item.name}
