@@ -8,7 +8,6 @@ const Glassy = ({
   servicePage,
   handleClick,
   itemName,
-  handleDelete,
   id,
   homePage,
   contactPage
@@ -127,18 +126,11 @@ const Glassy = ({
                 itemName(name);
                 handleClick();
               }}
-              className="px-[1vw] ml-[2vw] w-fit bg-blue-600 text-[2.25vw] md:text-[1.25vw] py-[0.8vw] md:py-[0.2vw] rounded-lg"
+              className="px-[1vw] ml-[1.8vw] w-fit bg-blue-600 text-[2.25vw] md:text-[1.25vw] py-[0.8vw] md:py-[0.2vw] rounded-lg"
             >
               Contact
             </div>
-            <div
-              onClick={() => {
-              handleDelete(id);
-              }}
-              className="px-[1vw] ml-[2vw] w-fit bg-red-600 text-[2.25vw] md:text-[1.25vw] py-[0.8vw] md:py-[0.2vw] rounded-lg"
-            >
-              Delete
-            </div>
+           
           </div>
         )}
       </div>
