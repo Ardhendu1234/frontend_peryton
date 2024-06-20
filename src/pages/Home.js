@@ -82,12 +82,6 @@ const Home = () => {
     main.current.addEventListener("mousemove", handleCursor);
   }, []);
 
-  const navigate = useNavigate();
-
-  const handleScroll = () => {
-    const position = window.scrollY;
-    setScrollPosition(position);
-  };
 
   const defaultOptions = {
     reverse: false,
@@ -144,14 +138,14 @@ const Home = () => {
         </div>
 
         <div
-          className={` w-[70vw] md:h-fit my-[1vw]`}
+          className={` w-[60vw] md:h-fit my-[1vw]`}
         >
           <Slider {...settings}>
             {products.map((item,index) => {
               return (
                   <div
                   key={index}
-                    className={`bg-zinc-900 w-[100%] h-[100%] flex justify-center items-center rounded-xl py-[4vw] px-[2vw]`}
+                    className={`bg-zinc-900 w-[100%] h-[100%] flex gap-6 justify-center items-center rounded-xl py-[4vw]  px-[2vw]`}
                   >
                     <div className="flex flex-col gap-[2vw] items-center justify-between">
                       <h3 className="text-white text-3xl font-bold">
