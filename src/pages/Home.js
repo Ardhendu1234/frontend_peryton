@@ -140,7 +140,7 @@ const Home = () => {
       <div className="pb-[100px] w-[100%] bg-black relative pt-8 flex flex-col justify-center items-center px-4">
 
         <div className="flex justify-center align-center w-full mx-auto py-8 ">
-          <h3 className="text-white text-3xl md:text-4xl font-bold">Products</h3>
+          <h3 className="text-white text-3xl md:text-5xl font-bold">Products</h3>
         </div>
 
         <div
@@ -189,7 +189,7 @@ const Home = () => {
 
 
         <div className="flex justify-center align-center w-full mt-[5vw] mx-auto py-8 ">
-          <h3 className="text-white text-3xl md:text-4xl font-bold">Services</h3>
+          <h3 className="text-white text-3xl md:text-5xl font-bold">Services</h3>
         </div>
 
         <div className="flex md:flex-row flex-col justify-center gap-6 md:gap-10 py-[2vw] rounded-md shadow-md">
