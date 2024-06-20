@@ -314,7 +314,7 @@ export const team = [
     instagram: <FaInstagram />,
   },
   {
-    image: "persons/manaswi.jpeg",
+    image: "persons/manasvi.jpeg",
     name: "Manaswi Vartak",
     title: "AI & ML engineer",
     linkedIn: <FaLinkedin />,
