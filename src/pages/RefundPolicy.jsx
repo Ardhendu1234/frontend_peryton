@@ -10,7 +10,7 @@ const RefundPolicy = () => {
       
       <p className="mb-4"><strong>This is a</strong> Peryton Techs Refund & Returns Policy.</p>
 
-      <h2 className="text-2xl font-semibold text-white mb-4">Overview</h2>
+      <h2 className="text-4xl font-semibold text-white mb-4">Overview</h2>
 
       <ul className="list-disc pl-8 mb-6">
         <li>Our refund and returns policy lasts 30 days. If 30 days have passed since your purchase, we can't offer you a full refund or exchange.</li>
@@ -29,7 +29,7 @@ const RefundPolicy = () => {
         <li>Any item that is returned more than 30 days after delivery</li>
       </ul>
 
-      <h2 className="text-2xl font-semibold text-white mb-4">Refunds</h2>
+      <h2 className="text-4xl font-semibold text-white mb-4">Refunds</h2>
 
       <p className="mb-4">Once your return is received and inspected, we will send you an email to notify you that we have received your returned item. We will also notify you of the approval or rejection of your refund.</p>
       <p className="mb-4">If you are approved, then your refund will be processed, and a credit will automatically be applied to your credit card or original method of payment, within a certain amount of days.</p>
@@ -41,22 +41,22 @@ const RefundPolicy = () => {
       <p className="mb-4">Next contact your bank. There is often some processing time before a refund is posted.</p>
       <p className="mb-4">If you've done all of this and you still have not received your refund yet, please contact us at {'{email address}'}.</p>
 
-      <h3 className="text-xl font-semibold text-white mb-4">Sale items</h3>
+      <h3 className="text-3xl font-semibold text-white mb-4">Sale items</h3>
 
       <p className="mb-4">Only regular priced items may be refunded. Sale items cannot be refunded.</p>
 
-      <h2 className="text-2xl font-semibold text-white mb-4">Exchanges</h2>
+      <h2 className="text-4xl font-semibold text-white mb-4">Exchanges</h2>
 
       <p className="mb-4">We only replace items if they are defective or damaged. If you need to exchange it for the same item, send us an email at <strong>info@www.peryton.in</strong> and send your item to: <strong>Innovation center</strong> <strong>Manipal Institute of Technology, MIT Inside Rd, Eshwar Nagar, Manipal, Karnataka 576104</strong>.</p>
 
-      <h2 className="text-2xl font-semibold text-white mb-4">Shipping returns</h2>
+      <h2 className="text-4xl font-semibold text-white mb-4">Shipping returns</h2>
 
       <p className="mb-4">To return your product, you should mail your product to: <strong>Innovation center</strong> <strong>Manipal Institute of Technology, MIT Inside Rd, Eshwar Nagar, Manipal, Karnataka 576104</strong>.</p>
       <p className="mb-4">You will be responsible for paying for your own shipping costs for returning your item. Shipping costs are non-refundable. If you receive a refund, the cost of return shipping will be deducted from your refund.</p>
       <p className="mb-4">Depending on where you live, the time it may take for your exchanged product to reach you may vary.</p>
       <p className="mb-4">If you are returning more expensive items, you may consider using a trackable shipping service or purchasing shipping insurance. We don't guarantee that we will receive your returned item.</p>
 
-      <h2 className="text-2xl font-semibold text-white mb-4">Need help?</h2>
+      <h2 className="text-4xl font-semibold text-white mb-4">Need help?</h2>
 
       <p className="mb-4">Contact us at <strong>info@www.peryton.in</strong> for questions related to refunds and returns.</p>
     </div>
