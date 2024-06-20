@@ -63,7 +63,7 @@ const Glassy3 = () => {
       options={defaultOptions}
       style={{
         clipPath: cursor ? "inset(0)" : "none",
-        width: "80vw",
+        width:"fit-content",
         display: "flex",
         justifyContent: "center",
         alignItems:"center",
@@ -89,11 +89,12 @@ const Glassy3 = () => {
         }}
         className={`${
           cursor ? "border-[2px] border-blue-700 " : " "
-        } h-[100%] pb-[4vw] sm:py-[2vw] justify-center items-center text-[2.5vw] w-[100%] cursor-pointer flex flex-col bg-black bg-opacity-10 rounded-2xl px-[4vw] text-white `}
+        } h-[100%] pb-[4vw] sm:py-[2vw] justify-center items-center text-[2.5vw] w-fit cursor-pointer flex flex-col bg-black bg-opacity-10 rounded-2xl px-[4vw] text-white `}
       >
-        <div className="flex flex-row w-full">
-            <div className="md:w-1/2 w-full flex flex-col">
-              <div className="w-full bg-transparent">
+        <div className="flex flex-row w-full justify-center items-center pb-[2vw]">
+
+            <div className=" w-full flex flex-col ">
+              <div className="w-full bg-transparent flex flex-col justify-center items-center">
                 <h2 className="text-white text-2xl md:text-3xl lg:text-5xl font-bold">
                   Let's Connect
                 </h2>
@@ -105,14 +106,15 @@ const Glassy3 = () => {
                 </Link>
               </div>
             </div>
-            <img
+
+            {/* <img
               src="imgs/dronePNG.png"
               alt="drone"
               style={{ 
               transform: 'translateZ(600px)',
             }}
               className="w-[30vw] h-[18vw] mt-[8vw] sm:mt-[2vw] hover:scale-105 transition-all duration-100 ease-linear"
-            />
+            /> */}
           </div>
       </div>
     </Tilt>
