@@ -5,7 +5,7 @@ const RefundPolicy = () => {
   return (
     <div className="mx-auto px-8 py-8 bg-zinc-950 overflow-hidden">
       <div className='mx-auto'>
-        <StyledHeading bg_text="REFUND" fg_text="Refund & Returns Policy" />
+        <StyledHeading bg_text="R & R" fg_text="Refund & Returns Policy" />
       </div>
       
       <p className="mb-4"><strong>This is a</strong> Peryton Techs Refund & Returns Policy.</p>
