@@ -37,7 +37,7 @@ const Footer = () => {
         <div className="md:w-[20%] w-full flex flex-col">
           <h3 className="text-white font-bold text-lg pb-4 md:pb-6">Information</h3>
           <Link
-            to="/"
+            to="/FAQ"
             className="text-gray-400 text-sm pb-3 hover:text-blue-700"
           >
             FAQ

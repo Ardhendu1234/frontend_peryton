@@ -19,6 +19,7 @@ import AdminLogin from "./components/AdminLogin";
 import TermsAndConditions from "./pages/TermsAndCondition";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import RefundPolicy from "./pages/RefundPolicy";
+import FAQ from "./pages/FAQ";
 
 const App = () => {
   return (
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="termsandconditions" element={<TermsAndConditions/>}/>
           <Route path="privacypolicy" element={<PrivacyPolicy/>}/>
           <Route path="refundpolicy" element={<RefundPolicy/>}/>
+          <Route path="FAQ" element={<FAQ/>}/>
         </Route>
       </Routes>
     </Router>

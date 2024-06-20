@@ -5,7 +5,7 @@ const PrivacyPolicy = () => {
   return (
     <div className="mx-auto px-8 py-8 bg-zinc-950 overflow-hidden">
       <div className='mx-auto'>
-        <StyledHeading bg_text="PRIVACY" fg_text="Privacy Policy" />
+        <StyledHeading bg_text="P & P" fg_text="Privacy Policy" />
       </div>
       
       <p className="mb-4">At peryton.in, accessible from https://www.peryton.in/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by peryton.in and how we use it.</p>
