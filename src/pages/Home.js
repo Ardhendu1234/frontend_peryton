@@ -8,7 +8,6 @@ import { MdGroups } from "react-icons/md";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 import { TbDrone } from "react-icons/tb";
-import { useNavigate } from "react-router-dom";
 import { Tilt } from "react-tilt";
 import Glassy from "../components/Glassy";
 import Glassy2 from "../components/Glassy2";

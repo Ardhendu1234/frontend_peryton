@@ -8,7 +8,6 @@ import { MdOutlineCancel } from "react-icons/md";
 function Ecommerce() {
   const [productType, setProductType] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
-  const [uploadProductForm, setUploadProductForm] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const [type, setType] = useState("FPV Goggles");
 
@@ -46,19 +45,7 @@ function Ecommerce() {
     getProductType();
   }, []);
 
-  const deleteCategory = async (id) => {
-    try {
-      console.log(id);
-      const res = await axios.delete(
-        `${Category_url}/deleteCategory?_id=${id}`
-      );
-      if (res) {
-        window.location.reload();
-      }
-    } catch (error) {
-      console.log(error, "not able to delte the product");
-    }
-  };
+
 
   const handleClick = (item) => {
     setType(item);
@@ -68,9 +55,7 @@ function Ecommerce() {
     setSelectedItem(item);
   };
 
-  const handleUploadForm = () => {
-    setUploadProductForm(!uploadProductForm);
-  };
+  
 
 
 
@@ -99,12 +84,7 @@ function Ecommerce() {
             >
               <div className="flex flex-row justify-between ">
                 <div> {item.name}</div>
-                <button
-                  onClick={() => deleteCategory(item._id)}
-                  className="text-red-500 hover:text-red-700"
-                >
-                  <MdOutlineCancel />
-                </button>
+            
               </div>
             </div>
           ))}

@@ -35,9 +35,7 @@ const Product = () => {
     setProductNameById(m);
 
     const p = products.filter((product) => {
-      //   console.log(product.id, Number(id));
       if (product.id === Number(id)) {
-        // console.log(product);
         return product;
       }
     })[0];
