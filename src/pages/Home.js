@@ -108,12 +108,12 @@ const Home = () => {
       <div className="w-[100%]  h-screen relative top-0 max-w-s z-[-2] overflow-hidden">
         <div
         style={{
-          backgroundImage: 'url("/imgs/drone4.png")',
+          // backgroundImage: 'url("/imgs/droneFrontPage.jpeg")',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',     
           backgroundPosition:'center'     
         }}
-          className="w-full h-full pt-[5vw] flex flex-col justify-center items-center"
+          className="w-full bg-black h-full pt-[5vw] flex flex-col justify-center items-center"
           alt="home"
         >
           <img
@@ -144,7 +144,7 @@ const Home = () => {
               return (
                   <div
                   key={index}
-                    className={`bg-zinc-900 w-[100%] h-[100%] flex gap-6 justify-center items-center rounded-xl py-[4vw]  px-[2vw]`}
+                    className={`bg-zinc-950 w-[100%] h-[100%] min-h-[650px] flex gap-6 justify-center items-center rounded-xl py-[4vw]  px-[2vw]`}
                   >
                     <div className="flex flex-col gap-[2vw] items-center justify-between">
                       <h3 className="text-white text-3xl font-bold">
@@ -153,19 +153,12 @@ const Home = () => {
                       <img
                         src={item.image}
                         alt={item.name}
-                        className="w-[15vw] h-[15vw] rounded-[50%] shadow-md"
+                        className=" h-[17vw] rounded-[5%] shadow-md"
                       />
-                      <p className="text-white text-lg  mt-[2vw] text-center">
+                      <p className="text-white text-md mt-[2vw] text-center">
                         {item.description}
                       </p>
-                      {/* <button
-                        className="text-white bg-gray-700 px-6 py-3 rounded font-bold hover:bg-blue-700 "
-                        onClick={() => {
-                          navigate("/products/" + item.id);
-                        }}
-                      >
-                        View Product
-                      </button> */}
+                      
                     </div>
                   </div>
        

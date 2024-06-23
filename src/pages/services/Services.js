@@ -22,7 +22,7 @@ const Services = () => {
 
    const getAllService = async () => {
         try {
-          const res = await axios.get(`${service_url}/getAllServices`);
+          const res = await axios.get(`${process.env.REACT_APP_service_url}/getAllServices`);
             const data=res.data.data
             console.log(data)
             setAllServices(data)

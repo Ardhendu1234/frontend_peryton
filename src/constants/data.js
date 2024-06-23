@@ -7,40 +7,23 @@ import { BsTelephoneFill } from "react-icons/bs";
 export const products = [
   {
     id: 1,
-    name: "DJI Mavic 3 Pro",
+    name: "Spraying Drone",
     description:
-      "Capture stunning aerial photos and videos with the DJI Mavic 3 Pro, a powerful and versatile camera drone. Featuring a Hasselblad L2D-20c camera with a 4/3 CMOS sensor, it delivers exceptional image quality with vivid colors and incredible detail.",
+      "This state-of-the-art agricultural drone devloped by Sarus Aerospace by Peryton Technologies is poised to redefine the landscape of modern farming practices. Equipped with cutting-edge technology, it offers unparalleled efficiency and precision in agricultural operations. From crop monitoring to precision spraying, our drone is designed to optimize every facet of the farming process. Embodying a perfect synergy of engineering excellence and agricultural insight, Sarus Aerospace's agricultural drone is set to transform traditional farming methods. ",
     price: 1599,
-    image:
-      "https://www.shutterhouse.lk/wp-content/uploads/2023/05/cab2d9720f2e4d8308b34b29f55fd13b@ultra.jpg",
-    coverImage:
-      "https://static1.pocketlintimages.com/wordpress/wp-content/uploads/wm/2023/05/dji-mavic-3-pro-36.jpg",
+    image: "imgs/product2.jpeg",
     category: "Camera Drone",
   },
   {
     id: 2,
-    name: "DJI Air 2S",
+    name: "FPV Drone",
     description:
-      "The DJI Air 2S is a compact and foldable camera drone that offers excellent image quality and performance. With a 1-inch CMOS sensor and the ability to record 5.1K video, it's a great choice for photographers and videographers alike.",
+      "Discover the power of precision with our advanced FPV drone. Elevate your perspective through immersive First Person View technology, capturing stunning visuals with a high-definition camera. Engineered for optimal performance and extended flight endurance, our drone is the professional's choice for unparalleled aerial exploration. Join us in redefining the limits of flight and experience the skies with unmatched clarity and control.",
     price: 999,
-    image:
-      "https://s3-ap-southeast-1.amazonaws.com/media.cameralk.com/7621/DJI-Air-2S-Fly-More-Combo-Drone1.jpg",
-    coverImage:
-      "https://dji-official-fe.djicdn.com/dps/01eb6d7b120bfd9da1e73149c7c2c2f4.jpg",
+    image: "imgs/product1.png",
     category: "Camera Drone",
   },
-  {
-    id: 3,
-    name: "DJI Mini 3 Pro",
-    description:
-      "The DJI Mini 3 Pro is an ultralight camera drone that weighs less than 249 grams, making it exempt from certain drone regulations in many countries. It features a 1/3-inch CMOS sensor and can record 4K HDR video, making it a great option for capturing stunning aerial footage on the go.",
-    price: 699,
-    image:
-      "https://s3-ap-southeast-1.amazonaws.com/media.cameralk.com/10221/1652172384_1700260.jpg",
-    coverImage:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHCtCwvRcYrc56Bt-lY2yvGUA3Dz3z3Rfw9A&usqp=CAU",
-    category: "Camera Drone",
-  },
+ 
 ];
 
 export const services = [
@@ -321,7 +304,7 @@ export const team = [
     instagram: <FaInstagram />,
   },
   {
-    image:"persons/nikhil.jpeg",
+    image:"persons/nikhil2.jpeg",
     name: "Nikhil Rayaprolu",
     title: "Marketing & Sales Head",
     linkedIn: <FaLinkedin />,
@@ -329,7 +312,7 @@ export const team = [
   },
   {
     image: "persons/gopi2.jpeg",
-    name: "Gopinath sheregar",
+    name: "Gopinath Sheregar",
     title: "Mentor",
     linkedIn: <FaLinkedin />,
     instagram: <FaInstagram />,

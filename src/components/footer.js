@@ -23,11 +23,11 @@ const Footer = () => {
                 id="email"
                 type="email"
                 placeholder="Email Address"
-                className="w-[160px] md:w-[240px] min-h-[40px] bg-gray-800 text-white py-4 px-4"
+                className="w-[80px] sm:w-[160px] md:w-[240px]  bg-gray-800 text-white py-2 md:py-4 px-4"
               />
               <button 
               onClick={handleClick}
-              className="w-[80px] md:w-[100px] min-h-[40px] bg-blue-700 text-white py-4 font-bold hover:bg-gray-700 hover: hover:text-blue-700">
+              className="w-[40px] text-[3vw] sm:w-[80px] md:w-[100px]  bg-blue-700 text-white py-1 md:py-4 font-bold hover:bg-gray-700  hover:text-blue-700">
                 JOIN
               </button>
             </div>

@@ -14,7 +14,8 @@ function Ecommerce() {
   useEffect(() => {
     const getAllProduct = async () => {
       try {
-        const res = await axios.get(`${ECOMM_URL}/getAllProducts`);
+        console.log(process.env.REACT_APP_ECOMM_URL)
+        const res = await axios.get(`${process.env.REACT_APP_ECOMM_URL}/getAllProducts`);
         if (res) {
           const data = res.data.data;
           console.log(data);
@@ -31,7 +32,7 @@ function Ecommerce() {
   useEffect(() => {
     const getProductType = async () => {
       try {
-        const res = await axios.get(`${Category_url}/getAllCategory`);
+        const res = await axios.get(`${process.env.REACT_APP_Category_url}/getAllCategory`);
         if (res) {
           const data = res.data.data;
           console.log(data);
