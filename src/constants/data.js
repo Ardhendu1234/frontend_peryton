@@ -9,7 +9,7 @@ export const products = [
     id: 1,
     name: "Spraying Drone",
     description:
-      "This state-of-the-art agricultural drone devloped by Sarus Aerospace by Peryton Technologies is poised to redefine the landscape of modern farming practices. Equipped with cutting-edge technology, it offers unparalleled efficiency and precision in agricultural operations. From crop monitoring to precision spraying, our drone is designed to optimize every facet of the farming process. Embodying a perfect synergy of engineering excellence and agricultural insight, Sarus Aerospace's agricultural drone is set to transform traditional farming methods. ",
+      "This state-of-the-art agricultural drone devloped by Sarus Aerospace by Peryton Technologies is poised to redefine the landscape of modern farming practices. Equipped with cutting-edge technology, it offers unparalleled efficiency and precision in agricultural operations. From crop monitoring to precision spraying, our drone is designed to optimize every facet of the farming process.",
     price: 1599,
     image: "imgs/product2.jpeg",
     category: "Camera Drone",

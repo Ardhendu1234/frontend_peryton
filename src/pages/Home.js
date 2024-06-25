@@ -144,18 +144,18 @@ const Home = () => {
               return (
                   <div
                   key={index}
-                    className={`bg-zinc-950 w-[100%] h-[100%] min-h-[650px] flex gap-6 justify-center items-center rounded-xl py-[4vw]  px-[2vw]`}
+                    className={`bg-zinc-950 w-[100%] h-[100%] md:min-h-[650px] flex gap-6 justify-center items-center rounded-xl py-[4vw] px-[2vw]`}
                   >
                     <div className="flex flex-col gap-[2vw] items-center justify-between">
-                      <h3 className="text-white text-3xl font-bold">
+                      <h3 className="text-white text-xl md:text-3xl font-bold">
                         {item.name}
                       </h3>
                       <img
                         src={item.image}
                         alt={item.name}
-                        className=" h-[17vw] rounded-[5%] shadow-md"
+                        className="h-[17vw] rounded-[5%] shadow-md"
                       />
-                      <p className="text-white text-md mt-[2vw] text-center">
+                      <p className="text-white text-[1.75vw] md:text-md mt-[2vw] text-center">
                         {item.description}
                       </p>
                       

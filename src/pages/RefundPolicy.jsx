@@ -3,7 +3,7 @@ import StyledHeading from '../components/styledHeading';
 
 const RefundPolicy = () => {
   return (
-    <div className=" px-10 md:px-40 py-8 bg-zinc-950 overflow-hidden">
+    <div className=" px-10 md:px-32 py-8 bg-zinc-950 overflow-hidden">
       <div className='mx-auto'>
         <StyledHeading bg_text="R & R" fg_text="Refund & Returns Policy" />
       </div>
