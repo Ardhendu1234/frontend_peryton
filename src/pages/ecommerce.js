@@ -121,7 +121,7 @@ function Ecommerce() {
    
 
       {selectedItem && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div className="fixed inset-0 bg-black z-[10000] bg-opacity-50 flex items-center justify-center">
           <ContactForm item={selectedItem} onClose={handleCloseForm} cart={cart}/>
         </div>
       )}

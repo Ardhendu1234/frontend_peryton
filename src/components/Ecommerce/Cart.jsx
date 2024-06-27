@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ContactForm from "../ContactForm";
 
 const Cart = ({ cart, setCart, handleCloseForm }) => {
+
+  const [price,setPrice]=useState(0)
+
   const handleIncreaseQuantity = (itemId) => {
     const updateCart = cart.map((item) =>
       item._id === itemId
@@ -22,6 +25,17 @@ const Cart = ({ cart, setCart, handleCloseForm }) => {
     setCart(updateCart);
   }
 
+  useEffect(()=>{
+    const countPrice=()=>{
+      let total=0;
+       cart.forEach((element) =>{ 
+        total+=element.price * element.quantity
+      });
+      setPrice(total)
+    }
+    countPrice()
+  })
+
   return (
     <div className="flex flex-col flex-end p-[1vw] flex-wrap items-center gap-[2vw] bg-zinc-600 sm:w-[20vw] w-[30vw] pl-[1vw] overflow-scroll hover:cursor-pointer">
       <div
@@ -29,6 +43,13 @@ const Cart = ({ cart, setCart, handleCloseForm }) => {
         className="w-full bg-blue-500 text-white text-[1.5vw] text-center py-[0.5vw] rounded-md">
         Contact Us
       </div>
+
+      <div
+        onClick={()=>handleCloseForm()}
+        className="w-full bg-white text-black text-[1.5vw] text-center py-[0.5vw] rounded-md">
+        Amount : {price}
+      </div>
+
 
       <div className="flex flex-col gap-[1vw]">
         {cart.map((item) => (

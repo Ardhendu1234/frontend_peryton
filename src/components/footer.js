@@ -12,7 +12,7 @@ const Footer = () => {
   }
 
   return (
-    <div className="w-[100%] py-[2vw] px-[3vw] flex flex-col bg-gray-950 z-[10000]">
+    <div className="w-[100%] py-[2vw] px-[3vw] flex flex-col bg-gray-950 z-100">
       <div className=" flex md:flex-row flex-col md:gap-0 gap-6">
         <div className="md:w-[60%] w-full ">
           <img src="imgs/logo.png" alt="site-logo" className="h-6 md:h-8 mb-8 md:mb-12" />

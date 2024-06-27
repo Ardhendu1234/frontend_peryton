@@ -10,7 +10,7 @@ const ProductCard = ({item,handleButtonClick,handleAddToCart}) => {
               <img className="img" src={item.imageUrls} alt="" />
               <div className="img-info">
                 <div className="info-inner">
-                  <span className="p-name">{item.name}</span>
+                  <span className="font-bold">{item.name}</span>
                   {/* <span className="p-company">Yeezy</span> */}
                 </div>
                 <div className="a-size">
