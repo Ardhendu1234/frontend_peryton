@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProductCard = ({item,handleButtonClick}) => {
+const ProductCard = ({item,handleButtonClick,handleAddToCart}) => {
   return (
     <div className="container page-wrapper  w-[85%] sm:w-[40vw] lg:w-[26vw] xl:w-[19vw]">
       <div className="page-inner ">
@@ -25,13 +25,13 @@ const ProductCard = ({item,handleButtonClick}) => {
               </div>
 
               <a
-                onClick={() => handleButtonClick(item.name)}
+                // onClick={() => handleButtonClick(item.name)}
                 className="cart"
                 href="#"
               >
                 <span className="price ">${item.price}</span>
                 <span className="add-to-cart">
-                  <span className="txt">Buy Now</span>
+                  <span onClick={()=>handleAddToCart(item)} className="txt">Add to Cart</span>
                 </span>
               </a>
             </div>

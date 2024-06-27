@@ -1,15 +1,33 @@
 import React, { useEffect, useState } from "react";
 import ContactForm from "../components/ContactForm";
-import { ECOMM_URL, Category_url } from "../constants/apiCalls";
 import axios from "axios";
 import ProductCard from "../components/Ecommerce/ProductCard";
-import { MdOutlineCancel } from "react-icons/md";
+import Cart from "../components/Ecommerce/Cart";
 
 function Ecommerce() {
   const [productType, setProductType] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
   const [type, setType] = useState("FPV Goggles");
+  const [cart,setCart]=useState([])
+
+  const handleAddToCart=(selectedItem)=>{
+    console.log(selectedItem._id)
+      const existingItemIndex = cart.findIndex((item)=>item._id===selectedItem._id);
+      console.log(existingItemIndex)
+      if(existingItemIndex!==-1){
+        const updatedCart= cart.map((item)=>item._id===selectedItem._id ? {...item, quantity:(item.quantity || 1) + 1 } : item)
+        setCart(updatedCart)
+      }
+      else {
+        setCart([...cart,{...selectedItem,quantity:1}]);
+      }
+  
+  }
+
+  useEffect(()=>{
+    console.log(cart)
+  },[cart])
 
   useEffect(() => {
     const getAllProduct = async () => {
@@ -92,15 +110,19 @@ function Ecommerce() {
         </div>        
       </div>
 
-      <div className="flex p-[1vw] flex-wrap justify-center md:justify-start items-center md:items-start gap-[2vw] bg-zinc-700 w-[70vw] sm:w-[85vw] pl-[1.5vw]">
+      <div className="flex p-[1vw] flex-wrap justify-center md:justify-start items-center md:items-start gap-[2vw] bg-zinc-700 w-[50vw] sm:w-[65vw] pl-[1.5vw]">
         {allProducts
           .filter((product) => product.productType === type)
           .map((item, key) => (
             <div key={key}>
-              <ProductCard item={item} handleButtonClick={handleButtonClick} />
+              <ProductCard item={item} handleButtonClick={handleButtonClick} handleAddToCart={handleAddToCart} />
             </div>
           ))}
       </div>
+
+      
+        <Cart cart={cart} setCart={setCart}/>
+   
 
       {selectedItem && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
