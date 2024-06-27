@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import emailjs from 'emailjs-com';
 
-function ContactForm({ item, onClose }) {
+function ContactForm({ item, onClose ,cart}) {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
@@ -16,7 +16,7 @@ function ContactForm({ item, onClose }) {
       phone,
       address,
       message,
-      item: item.name,  
+      cart: cart.map(item => `${item.name} (Quantity: ${item.quantity})`).join(', ')  
     };
 
     
@@ -39,9 +39,33 @@ function ContactForm({ item, onClose }) {
     }
   };
 
+  const formData = {
+    email,
+    phone,
+    address,
+    message,
+    cart: cart.map(item => `${item.name} (Stock: ${item.quantity})`).join(', ')  
+  };
+
+  useEffect(()=>{
+    console.log(formData)
+  },[cart])
+  
+
   return (
     <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full">
       <h2 className="text-2xl font-bold mb-4">Contact Form for {item.name}</h2>
+
+      <div className="mb-6 bg-gray-100 p-4 rounded-lg">
+        <h3 className="text-lg font-semibold mb-2">Your Cart:</h3>
+        {cart.map((cartItem) => (
+          <div key={cartItem._id} className="flex justify-between items-center mb-2">
+            <span>{cartItem.name}</span>
+            <span className="font-medium">Quantity: {cartItem.quantity}</span>
+          </div>
+        ))}
+      </div>
+
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block mb-2">Email:</label>

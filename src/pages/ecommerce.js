@@ -7,7 +7,7 @@ import Cart from "../components/Ecommerce/Cart";
 function Ecommerce() {
   const [productType, setProductType] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(false);
   const [type, setType] = useState("FPV Goggles");
   const [cart,setCart]=useState([])
 
@@ -74,12 +74,8 @@ function Ecommerce() {
     setSelectedItem(item);
   };
 
-  
-
-
-
   const handleCloseForm = () => {
-    setSelectedItem(null);
+    setSelectedItem(!selectedItem);
   };
 
 
@@ -110,7 +106,7 @@ function Ecommerce() {
         </div>        
       </div>
 
-      <div className="flex p-[1vw] flex-wrap justify-center md:justify-start items-center md:items-start gap-[2vw] bg-zinc-700 w-[50vw] sm:w-[65vw] pl-[1.5vw]">
+      <div className="flex p-[1vw] flex-wrap justify-center md:justify-start items-center md:items-start gap-[2vw] bg-zinc-700 w-[40vw] sm:w-[65vw] pl-[1.5vw]">
         {allProducts
           .filter((product) => product.productType === type)
           .map((item, key) => (
@@ -121,12 +117,12 @@ function Ecommerce() {
       </div>
 
       
-        <Cart cart={cart} setCart={setCart}/>
+        <Cart cart={cart} setCart={setCart} handleCloseForm={handleCloseForm}/>
    
 
       {selectedItem && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <ContactForm item={selectedItem} onClose={handleCloseForm} />
+          <ContactForm item={selectedItem} onClose={handleCloseForm} cart={cart}/>
         </div>
       )}
     </div>
