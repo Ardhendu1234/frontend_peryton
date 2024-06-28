@@ -45,7 +45,8 @@ function ContactForm({ item, onClose ,cart}) {
     phone,
     address,
     message,
-    cart: cart.map(item => `${item.name} (Stock: ${item.quantity})`).join(', ')  
+    cart: cart.map(item => `${item.name} (Stock: ${item.quantity})`).join(', '),
+    price
   };
 
   useEffect(()=>{
