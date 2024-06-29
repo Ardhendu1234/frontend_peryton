@@ -17,7 +17,7 @@ const Footer = () => {
         <div className="md:w-[60%] w-full ">
           <img src="imgs/logo.png" alt="site-logo" className="h-6 md:h-8 mb-8 md:mb-12" />
           <div>
-            <div className="text-white pb-3 text-lg md:text-2xl font-bold">Join our team</div>
+            <div className="text-white pb-3 text-xl md:text-2xl font-bold">Join our team</div>
             <div className="flex gap-4">
               <input
                 id="email"
@@ -27,7 +27,7 @@ const Footer = () => {
               />
               <button 
               onClick={handleClick}
-              className="w-[40px] text-[3vw] md:text-[1.2vw] sm:w-[80px] md:w-[100px] bg-blue-700 text-white py-1 md:py-2 font-bold hover:bg-gray-700  hover:text-blue-700">
+              className="w-[40px] text-[2.5vw] md:text-[1.2vw] sm:w-[80px] md:w-[100px] bg-blue-700 text-white py-1 md:py-2 font-bold hover:bg-gray-700  hover:text-blue-700">
                 JOIN
               </button>
             </div>
