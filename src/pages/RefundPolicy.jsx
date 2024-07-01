@@ -8,7 +8,7 @@ const RefundPolicy = () => {
         <StyledHeading bg_text="Policy" fg_text="Refund&Return" />
       </div>
       
-      <h2 className="text-3xl font-semibold text-white mb-4">Refund/Return Policy</h2>
+      {/* <h2 className="text-3xl font-semibold text-white mb-4">Refund/Return Policy</h2> */}
       
       <p className="mb-4">Peryton offers a (2) day refund policy on all new unopened equipment, starting from the date the product(s) was delivered to the customer. Anything beyond (2) days of delivery will not be eligible for return. If the product(s) received have been opened, dismantled, used, or damaged, no return options will be offered. A refund excluding a 2% restocking fee, payment gateway charges (if there are any), and shipping charges will be provided once Peryton confirms the returned equipment.</p>
 
