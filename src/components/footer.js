@@ -15,7 +15,7 @@ const Footer = () => {
     <div className="w-[100%] py-[2vw] px-[3vw] flex flex-col bg-gray-950 z-100">
       <div className=" flex md:flex-row flex-col md:gap-0 gap-6">
         <div className="md:w-[60%] w-full ">
-          <img src="imgs/logo.png" alt="site-logo" className="h-6 md:h-8 mb-8 md:mb-12" />
+          <img src="imgs/Peryton-Logo-White.png" alt="site-logo" className="h-5 md:h-6 mb-8 md:mb-12" />
           <div>
             <div className="text-white pb-3 text-xl md:text-2xl font-bold">Join our team</div>
             <div className="flex gap-4">

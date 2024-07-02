@@ -107,7 +107,7 @@ const Home = () => {
       <div className="w-[100%]  h-screen relative top-0 max-w-s z-[-2] overflow-hidden">
         <div
         style={{
-          // backgroundImage: 'url("/imgs/droneFrontPage.jpeg")',
+          backgroundImage: 'url("/imgs/bg-img.jpeg")',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',     
           backgroundPosition:'center'     
@@ -116,9 +116,9 @@ const Home = () => {
           alt="home"
         >
           <img
-            src="imgs/logo.png"
+            src="imgs/Peryton-Logo-White.png"
             alt="site-logo"
-            className="md:h-20 h-12 w-auto z-10 m-4"
+            className="md:h-16 h-10 w-auto z-10 m-4 mb-5"
           />
           <img
             src="imgs/sub-logo.png"
