@@ -118,12 +118,12 @@ const Home = () => {
           <img
             src="imgs/Peryton-Logo-White.png"
             alt="site-logo"
-            className="md:h-16 h-10 w-auto z-10 m-4 mb-5"
+            className="md:h-16 h-10  z-10 m-4 mb-8"
           />
           <img
             src="imgs/sub-logo.png"
             alt="site-logo"
-            className="md:h-6 h-2 w-auto z-10"
+            className="md:h-6 h-4 z-10"
           />
         </div>
       </div>

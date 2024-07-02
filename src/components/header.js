@@ -62,7 +62,7 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Peryton</span>
-            <img className="h-5 w-auto" src="imgs/Peryton-Logo-White.png" alt="site-logo" />
+            <img className="h-4 md:h-5 w-auto" src="imgs/Peryton-Logo-White.png" alt="site-logo" />
           </a>
         </div>
         <div className="flex lg:hidden">
