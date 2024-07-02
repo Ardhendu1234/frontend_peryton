@@ -143,7 +143,7 @@ const Home = () => {
               return (
                   <div
                   key={index}
-                    className={`bg-zinc-950 w-[100%] h-[100%] md:min-h-[650px] flex gap-6 justify-center items-center rounded-xl py-[4vw] px-[2vw]`}
+                    className={`bg-black w-[100%] h-fit  flex gap-6 justify-center items-center rounded-xl py-[4vw] px-[2vw]`}
                   >
                     <div className="flex flex-col gap-[2vw] items-center justify-between">
                       <h3 className="text-white text-xl md:text-3xl font-bold">
@@ -154,7 +154,7 @@ const Home = () => {
                         alt={item.name}
                         className="h-[17vw] rounded-[5%] shadow-md"
                       />
-                      <p className="text-white text-[1.75vw] md:text-md mt-[2vw] text-center">
+                      <p className="text-white text-[1.5vw] md:text-[1.25vw] mt-[2vw] text-center">
                         {item.description}
                       </p>
                       
