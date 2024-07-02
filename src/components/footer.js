@@ -22,14 +22,15 @@ const Footer = () => {
               <input
                 id="email"
                 type="email"
-                placeholder="Email Address"
-                className="w-[80px] sm:w-[160px] md:w-[240px] bg-gray-800 text-white py-2 md:py-2 px-4"
-              />
-              <button 
-              onClick={handleClick}
-              className="w-[40px] text-[2.5vw] md:text-[1.2vw] sm:w-[80px] md:w-[100px] bg-blue-700 text-white py-1 md:py-2 font-bold hover:bg-gray-700  hover:text-blue-700">
-                JOIN
-              </button>
+                placeholder="Email"
+                className="w-20 sm:w-40 md:w-60 bg-gray-800 text-white py-2 px-4 text-sm sm:text-base md:text-lg placeholder:text-xs sm:placeholder:text-sm md:placeholder:text-base"
+/>
+<button
+onClick={handleClick}
+className="w-20 sm:w-24 md:w-28 bg-blue-700 text-white py-2 px-4 text-xs sm:text-sm md:text-base font-bold hover:bg-gray-700 hover:text-blue-700 transition-colors duration-300"
+>
+JOIN
+</button>
             </div>
           </div>
         </div>

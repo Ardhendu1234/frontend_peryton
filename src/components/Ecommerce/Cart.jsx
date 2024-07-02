@@ -55,26 +55,25 @@ const Cart = ({ cart, setCart, handleCloseForm }) => {
         {cart.map((item) => (
           <div
             key={item._id}
-            className="flex items-center border border-gray-300 rounded-lg p-2 m-2 shadow-sm"
-          >
+            className="flex flex-col md:flex-row items-center justify-center border border-gray-300 rounded-lg p-2 m-2 shadow-sm">
             <img
               src={item.imageUrls}
               alt={item.name}
-              className="w-[6vw] h-[6vw] object-cover rounded-md mr-4"
+              className="w-[6vw] h-[6vw] object-cover rounded-md md:mr-4 "
             />
             <div className="flex flex-col flex-grow">
               <h3 className=" text-sm md:text-lg text-white font-semibold mb-2">{item.name}</h3>
               <div className="flex items-center">
                 <button
                   onClick={() =>handleDecreaseQuantity(item._id)}
-                  className="bg-gray-200 text-gray-700 text-[2vw] px-[1vw] md:text-[1.25vw] py-[0.5vw] rounded-l-md hover:bg-gray-300"
+                  className="bg-gray-200 text-gray-700 text-[1.5vw] px-[1vw] md:text-[1.25vw] py-[0.5vw] rounded-l-md hover:bg-gray-300"
                 >
                   -
                 </button>
-                <span className="bg-gray-100 px-[1vw] text-[2vw] md:text-[1.25vw] py-[0.5vw]">{item.quantity}</span>
+                <span className="bg-gray-100 px-[1vw] text-[1.5vw] md:text-[1.25vw] py-[0.5vw]">{item.quantity}</span>
                 <button
                   onClick={() =>handleIncreaseQuantity(item._id)}
-                  className="bg-gray-200 text-gray-700 text-[2vw] md:text-[1.25vw] px-[1vw] py-[0.5vw] rounded-r-md hover:bg-gray-300"
+                  className="bg-gray-200 text-gray-700 text-[1.5vw] md:text-[1.25vw] px-[1vw] py-[0.5vw] rounded-r-md hover:bg-gray-300"
                 >
                   +
                 </button>

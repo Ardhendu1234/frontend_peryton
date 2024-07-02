@@ -12,7 +12,6 @@ import { Tilt } from "react-tilt";
 import Glassy from "../components/Glassy";
 import Glassy2 from "../components/Glassy2";
 import Glassy3 from "../components/Glassy3";
-import { service_url } from "../constants/apiCalls";
 import axios from "axios";
 
 const Home = () => {
@@ -24,7 +23,7 @@ const Home = () => {
 
     const getAllService = async () => {
          try {
-           const res = await axios.get(`${service_url}/getAllServices`);
+           const res = await axios.get(`${process.env.REACT_APP_service_url}/getAllServices`);
              const data=res.data.data
              const limitedData = data.slice(0, 3); // Take the first 3 services
       console.log(limitedData);

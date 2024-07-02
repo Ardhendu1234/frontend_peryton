@@ -97,7 +97,7 @@ function Ecommerce() {
                   : "bg-zinc-100 text-black"
               }`}
             >
-              <div className="flex flex-row justify-between ">
+              <div className="flex flex-row  justify-between ">
                 <div> {item.name}</div>
             
               </div>
