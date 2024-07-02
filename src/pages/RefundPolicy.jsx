@@ -5,7 +5,7 @@ const RefundPolicy = () => {
   return (
     <div className="px-10 md:px-32 py-8 bg-zinc-950  overflow-hidden">
       <div className='mx-auto'>
-        <StyledHeading bg_text="Policy" fg_text="Refund&Return" />
+        <StyledHeading bg_text="R&R" fg_text="Refund&Return Policy" />
       </div>
       
       {/* <h2 className="text-3xl font-semibold text-white mb-4">Refund/Return Policy</h2> */}
