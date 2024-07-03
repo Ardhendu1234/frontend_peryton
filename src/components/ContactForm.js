@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import emailjs from 'emailjs-com';
 
-function ContactForm({ item, onClose ,cart}) {
+function ContactForm({ onClose ,cart}) {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
@@ -56,7 +56,7 @@ function ContactForm({ item, onClose ,cart}) {
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-lg max-w-md w-full ">
-      <h2 className="text-2xl font-bold mb-4">Contact Form for {item.name}</h2>
+      <h2 className="text-2xl font-bold mb-4">Contact Form </h2>
 
       <div className="mb-6 bg-gray-100 p-4 rounded-lg">
         <h3 className="text-lg font-semibold mb-2">Your Cart:</h3>

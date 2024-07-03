@@ -2,14 +2,16 @@ import React, { useEffect, useState } from "react";
 import ContactForm from "../components/ContactForm";
 import axios from "axios";
 import ProductCard from "../components/Ecommerce/ProductCard";
-import Cart from "../components/Ecommerce/Cart";
+
+import { useCart } from "../UseContext/CartContext";
+import Cart from "./Cart";
 
 function Ecommerce() {
   const [productType, setProductType] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
   const [selectedItem, setSelectedItem] = useState(false);
   const [type, setType] = useState("FPV Goggles");
-  const [cart,setCart]=useState([])
+  const [cart,setCart]=useCart()
 
   const handleAddToCart=(selectedItem)=>{
     console.log(selectedItem._id)
@@ -46,6 +48,7 @@ function Ecommerce() {
 
     getAllProduct();
   }, []);
+
 
   useEffect(() => {
     const getProductType = async () => {
@@ -116,15 +119,9 @@ function Ecommerce() {
           ))}
       </div>
 
-      
-        {/* <Cart cart={cart} setCart={setCart} handleCloseForm={handleCloseForm}/> */}
-   
 
-      {selectedItem && (
-        <div className="fixed inset-0 bg-black z-[10000] bg-opacity-50 flex items-center justify-center">
-          <ContactForm item={selectedItem} onClose={handleCloseForm} cart={cart}/>
-        </div>
-      )}
+
+      
     </div>
   );
 }

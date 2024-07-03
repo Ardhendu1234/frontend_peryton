@@ -20,6 +20,7 @@ import TermsAndConditions from "./pages/TermsAndCondition";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import RefundPolicy from "./pages/RefundPolicy";
 import FAQ from "./pages/FAQ";
+import Cart from "./pages/Cart";
 
 const App = () => {
   return (
@@ -40,6 +41,7 @@ const App = () => {
           <Route exact path="blog/:category/:id" element={<Blog />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="cart" element={<Cart />} />
           <Route path="demo" element={<Demo/>}/>
           <Route path="adminlogin" element={<AdminLogin/>}/>
           <Route path="termsandconditions" element={<TermsAndConditions/>}/>

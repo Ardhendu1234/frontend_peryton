@@ -44,28 +44,25 @@ const ProductCard = ({item,handleButtonClick,handleAddToCart}) => {
   return (
     <div className="flex flex-col bg-white items-center justify-between w-full gap-3 p-4 rounded-xl 
     border-2 border-[#00095] shadow-lg hover:shadow-2xl hover:scale-[1.03]
-    md:hover:scale-[1.05] transition ease-in">
+    md:hover:scale-[1.02] transition ease-in">
       <div>
-        <p className="text-[#1d783e] font-semibold text-lg text-left truncate w-40 mt-1">
+        <p className="text-[#1d783e] font-semibold text-lg text-left truncate  mt-1">
           {item.name}
         </p>
       </div>
       <div>
-        <p className="w-40 text-gray-400 font-normal text-[10px] text-left">
+        <p className=" text-gray-400 font-normal text-[20px] text-left">
           {item.description}
         </p>
       </div>
-      <div className="h-[180px]">
+      <div className="h-[250px]">
         <img src={item.imageUrls} className="h-full w-full" alt=""/>
       </div>
 
-      <div className="flex justify-between items-center w-full mt-5">
+      <div className="flex justify-between items-center w-full mt-3">
         <div>
-          <p className="text-green-600 font-semibold">${item.price}</p>
+          <p className="text-green-600 font-semibold mt-3">${item.price}</p>
         </div>
-        
-        
-     
           
           <button
           className="text-gray-700 border-2 border-gray-700 rounded-full font-semibold 
