@@ -82,7 +82,7 @@ function Ecommerce() {
 
   return (
     <div className="flex flex-row h-[100vh]">
-      <div className="w-[30vw] h-[100%] text-[2.5vw] sm:text-[1.75vw] md:text-[1.5vw] lg:text-[1.25vw] sm:w-[15vw] border-r-[1px] border-black flex flex-col items-center">
+      <div className="w-[30%] h-[100%] text-[2.5vw] sm:text-[1.75vw] md:text-[1.5vw] lg:text-[1.25vw] sm:w-[15vw] border-r-[1px] border-black flex flex-col items-center">
         <div className="bg-black text-white text-xl tracking-wider font-semibold py-[0.75vw] px-[2vw] focus:outline-none w-full focus:shadow-outline">
           Category
         </div>
@@ -106,7 +106,7 @@ function Ecommerce() {
         </div>        
       </div>
 
-      <div className="flex p-[1vw] flex-wrap justify-center md:justify-start items-center md:items-start gap-[2vw] bg-zinc-700 w-[40vw] sm:w-[65vw] pl-[1.5vw]">
+      <div className="flex p-[1vw] flex-wrap justify-center md:justify-start items-center md:items-start gap-[2vw] bg-zinc-200 w-[85%] pl-[1.5vw]">
         {allProducts
           .filter((product) => product.productType === type)
           .map((item, key) => (
@@ -117,7 +117,7 @@ function Ecommerce() {
       </div>
 
       
-        <Cart cart={cart} setCart={setCart} handleCloseForm={handleCloseForm}/>
+        {/* <Cart cart={cart} setCart={setCart} handleCloseForm={handleCloseForm}/> */}
    
 
       {selectedItem && (
