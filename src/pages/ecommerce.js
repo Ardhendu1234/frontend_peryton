@@ -85,7 +85,7 @@ function Ecommerce() {
 
 
   return (
-    <div className="flex flex-row h-fit ">
+    <div className="flex flex-row min-h-[100vh] ">
 
       <div className=" text-[2.5vw] sm:text-[1.75vw] md:text-[1.5vw] lg:text-[1.25vw] border-r-[1px] border-black flex flex-col items-center w-[15vw]">
 
@@ -113,7 +113,7 @@ function Ecommerce() {
 
       </div>
 
-      <div className="flex w-[85vw] h-fit overflow-scroll p-[1vw] flex-wrap justify-start md:items-start gap-[2vw] bg-zinc-200 pl-[1.5vw]">
+      <div className="flex w-[85vw] h-fit overflow-scroll p-[1vw] flex-wrap justify-start md:items-start gap-[2vw] bg-zinc-200 min-h-[100vh] pl-[1.5vw]">
         {allProducts
           .filter((product) => product.productType === type)
           .map((item, key) => (
