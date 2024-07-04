@@ -25,8 +25,15 @@ function Ecommerce() {
       else {
         setCart([...cart,{...selectedItem,quantity:1}]);
       }
-  
   }
+
+  const handleRemoveFromCart = (selectedItem) => {
+    console.log(selectedItem._id);
+    toast.success("Item removed from Cart");
+  
+    const updatedCart = cart.filter((item) => item._id !== selectedItem._id);
+    setCart(updatedCart);
+  };
 
   useEffect(()=>{
     console.log(cart)
@@ -118,7 +125,7 @@ function Ecommerce() {
           .filter((product) => product.productType === type)
           .map((item, key) => (
             <div key={key}>
-              <ProductCard item={item} handleButtonClick={handleButtonClick} handleAddToCart={handleAddToCart} />
+              <ProductCard item={item} handleRemoveFromCart={handleRemoveFromCart} cart={cart} handleButtonClick={handleButtonClick} handleAddToCart={handleAddToCart} />
             </div>
           ))}
       </div>
