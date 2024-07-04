@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import ContactForm from "../components/ContactForm";
 import axios from "axios";
 import ProductCard from "../components/Ecommerce/ProductCard";
-
 import { useCart } from "../UseContext/CartContext";
 import Cart from "./Cart";
+import { toast } from "react-hot-toast";
 
 function Ecommerce() {
   const [productType, setProductType] = useState([]);
@@ -15,6 +15,7 @@ function Ecommerce() {
 
   const handleAddToCart=(selectedItem)=>{
     console.log(selectedItem._id)
+    toast.success("Item added to Cart")
       const existingItemIndex = cart.findIndex((item)=>item._id===selectedItem._id);
       console.log(existingItemIndex)
       if(existingItemIndex!==-1){
@@ -84,12 +85,15 @@ function Ecommerce() {
 
 
   return (
-    <div className="flex flex-row h-[100vh]">
-      <div className="w-[30%] h-[100%] text-[2.5vw] sm:text-[1.75vw] md:text-[1.5vw] lg:text-[1.25vw] sm:w-[15vw] border-r-[1px] border-black flex flex-col items-center">
-        <div className="bg-black text-white text-xl tracking-wider font-semibold py-[0.75vw] px-[2vw] focus:outline-none w-full focus:shadow-outline">
+    <div className="flex flex-row h-fit ">
+
+      <div className=" text-[2.5vw] sm:text-[1.75vw] md:text-[1.5vw] lg:text-[1.25vw] border-r-[1px] border-black flex flex-col items-center w-[15vw]">
+
+        <div className="bg-black text-white text-lg md:text-xl w-full font-semibold py-[0.75vw] px-[2vw]">
           Category
         </div>
-        <div className="w-full overflow-y-scroll max-h-[55%]">
+
+        <div className="w-full overflow-y-scroll overflow-scroll">
           {productType?.map((item, key) => (
             <div
               onClick={() => handleClick(item.name)}
@@ -100,16 +104,16 @@ function Ecommerce() {
                   : "bg-zinc-100 text-black"
               }`}
             >
-              <div className="flex flex-row  justify-between ">
+              <div className="flex flex-row justify-between">
                 <div> {item.name}</div>
-            
               </div>
             </div>
           ))}
-        </div>        
+        </div>   
+
       </div>
 
-      <div className="flex p-[1vw] flex-wrap justify-center md:justify-start items-center md:items-start gap-[2vw] bg-zinc-200 w-[85%] pl-[1.5vw]">
+      <div className="flex w-[85vw] h-fit overflow-scroll p-[1vw] flex-wrap justify-start md:items-start gap-[2vw] bg-zinc-200 pl-[1.5vw]">
         {allProducts
           .filter((product) => product.productType === type)
           .map((item, key) => (
@@ -118,9 +122,6 @@ function Ecommerce() {
             </div>
           ))}
       </div>
-
-
-
       
     </div>
   );
