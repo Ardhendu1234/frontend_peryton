@@ -89,7 +89,7 @@ function Ecommerce() {
 
       <div className=" text-[2.5vw] sm:text-[1.75vw] md:text-[1.5vw] lg:text-[1.25vw] border-r-[1px] border-black flex flex-col items-center w-[15vw]">
 
-        <div className="bg-black text-white text-lg md:text-xl w-full font-semibold py-[0.75vw] px-[2vw]">
+        <div className="bg-black text-white text-[2.5vw] md:text-[1.75vw] w-full font-semibold py-[0.75vw] px-[2vw]">
           Category
         </div>
 

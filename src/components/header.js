@@ -68,7 +68,22 @@ export default function Header() {
             <img className="h-4 md:h-5 w-auto" src="imgs/Peryton-Logo-White.png" alt="site-logo" />
           </a>
         </div>
-        <div className="flex lg:hidden">
+        <div className="flex lg:hidden flex-row gap-[3vw]">
+
+
+        <Link to="/cart">
+              <div className="relative">
+                  <FaShoppingCart className="text-2xl text-white"/>
+                   {
+                    cart.length > 0 &&
+                    <span
+                    className="absolute -top-1 -right-2 bg-blue-600 text-xs w-5 h-5 flex 
+                    justify-center items-center animate-bounce rounded-full text-white" 
+                    >{cart.length}</span>
+                  }
+                  
+              </div>
+            </Link>
           
           <button
             type="button"
@@ -157,10 +172,12 @@ export default function Header() {
             </Link>
 
         </Popover.Group>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end ">
           <Link to="#" className="text-sm font-semibold leading-6 text-gray-50">
             <MagnifyingGlassIcon className="h-5 w-5 flex-none hidden" />
           </Link>
+          
         </div>
       </nav>
 
@@ -174,6 +191,25 @@ export default function Header() {
               <span className="sr-only">Peryton</span>
               <img className="h-8 w-auto" src="imgs/logo.png" alt="" />
             </Link>
+
+            <Link to="/cart">
+              <div className="relative">
+                  <FaShoppingCart className="text-2xl text-white"/>
+                   {
+                    cart.length > 0 &&
+                    <span
+                    className="absolute -top-1 -right-2 bg-green-600 text-xs w-5 h-5 flex 
+                    justify-center items-center animate-bounce rounded-full text-white" 
+                    >{cart.length}</span>
+                  }
+                  
+              </div>
+            </Link>
+
+           
+           
+
+          
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -182,7 +218,12 @@ export default function Header() {
               <span className="sr-only">Close menu</span>
               <XMarkIcon className="h-6 w-6" aria-hidden="true" />
             </button>
+
+        
+
           </div>
+
+
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
@@ -226,19 +267,7 @@ export default function Header() {
                   Contact
                 </Link>
 
-                <Link to="/cart">
-              <div className="relative">
-                  <FaShoppingCart className="text-2xl"/>
-                   {
-                    cart.length > 0 &&
-                    <span
-                    className="absolute -top-1 -right-2 bg-green-600 text-xs w-5 h-5 flex 
-                    justify-center items-center animate-bounce rounded-full text-white" 
-                    >{cart.length}</span>
-                  }
-                  
-              </div>
-            </Link>
+               
               </div>
               {/* <div className="py-6">
                 <Link
