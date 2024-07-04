@@ -48,12 +48,10 @@ const Cart = () => {
 
 
   return (
-    <div className="bg-zinc-950">
-  {
-    cart?.length > 0  ? 
-    
+    <div className="bg-zinc-950 min-h-[100vh] ">
+  {cart?.length > 0  ? 
+  
     (<div className="flex gap-16 max-w-6xl p-6 mx-auto flex-wrap lg:flex-nowrap">
-
       <div className="lg:w-[70%]">
         {
           cart?.map((item) => {
