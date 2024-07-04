@@ -8,7 +8,7 @@ const About = () => {
   const breadCrumbs = useBreadCrumbs();
 
   return (
-    <div className="bg-gray-950 w-full h-full py-8 pb-32">
+    <div className="bg-gray-950 w-full h-full min-h-[100vh] py-8 pb-32">
       <BreadCrumbBar breadCrumbs={breadCrumbs} />
 
       <StyledHeading bg_text="About Us" fg_text="About Us" />
