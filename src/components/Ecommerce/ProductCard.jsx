@@ -30,7 +30,7 @@ const ProductCard = ({item,handleAddToCart,cart,handleRemoveFromCart}) => {
   <button
     className="text-gray-100 border-[1px] bg-red-600 rounded-full font-semibold 
     text-[1.75vw] sm:text-[1vw] p-[0.5vw] px-[1vw] uppercase 
-    hover:bg-gray-700 hover:text-white transition duration-300 ease-in"
+    hover:bg-red-600 hover:text-white transition duration-300 ease-in"
     onClick={() => handleRemoveFromCart(item)}
   >
     Remove

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import { toast } from "react-hot-toast";
 
 function JoinForm({ onClose }) {
   const [email, setEmail] = useState('');
@@ -10,31 +11,23 @@ function JoinForm({ onClose }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    
-    const formData = {
-      email,
-      phone,
-      address,
-      message, 
-    };
-
-    
-
-      try {
-        
-        // await emailjs.send(
-        //   'service_ucsg2u9',    
-        //   'template_xh0javp',   
-        //   formData,
-        //   'LsNle7uL7XcsY8ntV'        
-        // );
-        // alert('Email sent successfully');
-        onClose()
-
+    try {
+      await emailjs.send(
+        'service_ex3hfon',    
+        'template_72wge2o',   
+        {
+          email: email,
+          phone: phone,
+          address: address,
+          message: message,
+        },
+       'CUtL5NjK6GNvV43_8'       
+      );
+      toast.success("Email Sent");
+      onClose();
     } catch (error) {
       console.error('Error sending email:', error);
-      alert('Error sending email: ' + error.message); 
-    
+      toast.error('Error sending email: ' + error.message);
     }
   };
 
@@ -100,5 +93,3 @@ function JoinForm({ onClose }) {
 }
 
 export default JoinForm;
-
-

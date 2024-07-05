@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import ContactForm from "../components/ContactForm";
 import axios from "axios";
 import ProductCard from "../components/Ecommerce/ProductCard";
 import { useCart } from "../UseContext/CartContext";
-import Cart from "./Cart";
 import { toast } from "react-hot-toast";
 
 function Ecommerce() {
@@ -14,10 +12,7 @@ function Ecommerce() {
   const [cart,setCart]=useCart()
 
   const handleAddToCart=(selectedItem)=>{
-    console.log(selectedItem._id)
-    toast.success("Item added to Cart")
       const existingItemIndex = cart.findIndex((item)=>item._id===selectedItem._id);
-      console.log(existingItemIndex)
       if(existingItemIndex!==-1){
         const updatedCart= cart.map((item)=>item._id===selectedItem._id ? {...item, quantity:(item.quantity || 1) + 1 } : item)
         setCart(updatedCart)
@@ -25,28 +20,27 @@ function Ecommerce() {
       else {
         setCart([...cart,{...selectedItem,quantity:1}]);
       }
+      toast.success("Item added to Cart")
   }
 
   const handleRemoveFromCart = (selectedItem) => {
-    console.log(selectedItem._id);
-    toast.success("Item removed from Cart");
+  
+    toast.error("Item removed from Cart");
   
     const updatedCart = cart.filter((item) => item._id !== selectedItem._id);
     setCart(updatedCart);
   };
 
-  useEffect(()=>{
-    console.log(cart)
-  },[cart])
+ 
 
   useEffect(() => {
     const getAllProduct = async () => {
       try {
-        console.log(process.env.REACT_APP_ECOMM_URL)
+ 
         const res = await axios.get(`${process.env.REACT_APP_ECOMM_URL}/getAllProducts`);
         if (res) {
           const data = res.data.data;
-          console.log(data);
+         
           setAllProducts(data);
         }
       } catch (error) {
@@ -64,7 +58,7 @@ function Ecommerce() {
         const res = await axios.get(`${process.env.REACT_APP_Category_url}/getAllCategory`);
         if (res) {
           const data = res.data.data;
-          console.log(data);
+         
           setProductType(data);
         }
       } catch (error) {
